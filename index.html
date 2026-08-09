@@ -61,20 +61,29 @@
             background: #D4AF37;
         }
 
+        /* Custom Background Image Configuration */
+        body {
+            background-image: radial-gradient(rgba(7, 8, 11, 0.65), rgba(3, 4, 6, 0.85)), url('Gemini_Generated_Image_9d0a709d0a709d0a.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
         /* Glassmorphism Styles */
         .glass-panel {
-            background: rgba(10, 13, 20, 0.78);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(212, 175, 55, 0.18);
-            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.7);
+            background: rgba(10, 13, 20, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.22);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.75);
         }
         
         .glass-card {
-            background: rgba(18, 22, 32, 0.68);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.14);
+            background: rgba(18, 22, 32, 0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(212, 175, 55, 0.16);
             transition: all 0.3s ease;
         }
         .glass-card:hover {
@@ -90,8 +99,8 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Interactive Canvas Background */
-        #fractal-canvas {
+        /* Interactive Canvas Background Layer */
+        #star-canvas {
             position: fixed;
             top: 0;
             left: 0;
@@ -102,10 +111,10 @@
         }
     </style>
 </head>
-<body class="bg-obsidian-900 text-slate-200 font-inter min-h-screen relative overflow-x-hidden selection:bg-gold-500 selection:text-obsidian-900">
+<body class="text-slate-200 font-inter min-h-screen relative overflow-x-hidden selection:bg-gold-500 selection:text-obsidian-900">
 
-    <!-- Interactive WebGL/Canvas Fibonacci Golden Mandala Background -->
-    <canvas id="fractal-canvas"></canvas>
+    <!-- Interactive Canvas Layer for Stardust & Shooting Stars (Estrellas Fugaces) -->
+    <canvas id="star-canvas"></canvas>
 
     <!-- UI Overlay Wrapper -->
     <div class="relative z-10 min-h-screen flex flex-col justify-between">
@@ -291,37 +300,25 @@
 
     </div>
 
+    <!-- Canvas Engine: Stardust & Shooting Stars (Sin figuras geométricas) -->
     <script>
-        // Sacred Fibonacci Golden Mandala Engine
-        const canvas = document.getElementById('fractal-canvas');
+        const canvas = document.getElementById('star-canvas');
         const ctx = canvas.getContext('2d');
 
-        let width, height, cx, cy;
-        
+        let width, height;
+
         function resize() {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
-            cx = width / 2;
-            cy = height / 2;
             initStardust();
         }
         window.addEventListener('resize', resize);
 
-        // Golden Ratio Constants
-        const PHI = 1.618033988749895;
-        const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5)); // ~137.5 degrees in radians
-
         let time = 0;
-        let mouseX = cx;
-        let mouseY = cy;
-
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        // Cosmic background stardust particles
         let stardust = [];
+        let shootingStars = [];
+
+        // Generar partículas estelares de fondo
         function initStardust() {
             stardust = [];
             const count = Math.floor((width * height) / 2200);
@@ -330,259 +327,104 @@
                     x: Math.random() * width,
                     y: Math.random() * height,
                     size: Math.random() * 1.5 + 0.3,
-                    alpha: Math.random() * 0.6 + 0.1,
-                    speed: Math.random() * 0.01 + 0.003
+                    alpha: Math.random() * 0.6 + 0.2,
+                    twinkleSpeed: Math.random() * 0.02 + 0.005
                 });
             }
         }
 
-        // Draw an intricate golden mandala petal
-        function drawPetal(ctx, rInner, rOuter, petalAngleWidth) {
-            ctx.beginPath();
-            ctx.moveTo(0, -rInner);
-            ctx.bezierCurveTo(
-                petalAngleWidth * rOuter * 1.1, -rInner * 1.05,
-                petalAngleWidth * rOuter * 0.7, -rOuter * 0.95,
-                0, -rOuter
-            );
-            ctx.bezierCurveTo(
-                -petalAngleWidth * rOuter * 0.7, -rOuter * 0.95,
-                -petalAngleWidth * rOuter * 1.1, -rInner * 1.05,
-                0, -rInner
-            );
-            ctx.closePath();
+        // Crear una estrella fugaz
+        function createShootingStar() {
+            const startFromTop = Math.random() > 0.3;
+            const x = startFromTop ? Math.random() * width : 0;
+            const y = startFromTop ? 0 : Math.random() * (height * 0.6);
+            const angle = (Math.PI / 4) + (Math.random() - 0.5) * 0.25; // ~45 grados hacia abajo
+            const speed = Math.random() * 12 + 10;
+            const length = Math.random() * 100 + 70;
+
+            shootingStars.push({
+                x: x,
+                y: y,
+                dx: Math.cos(angle) * speed,
+                dy: Math.sin(angle) * speed,
+                length: length,
+                size: Math.random() * 1.5 + 1,
+                life: 0,
+                maxLife: Math.random() * 35 + 25,
+                color: Math.random() > 0.35 ? '#FFD54F' : '#FFFFFF'
+            });
         }
 
-        // Draw a concentric ring of golden petals
-        function drawMandalaRing(ctx, radius, numPetals, rotation, strokeColor, fillColor, glowBlur) {
-            ctx.save();
-            ctx.rotate(rotation);
-            ctx.strokeStyle = strokeColor;
-            ctx.lineWidth = 1;
+        // Renderizar y actualizar las estrellas fugaces
+        function updateAndDrawShootingStars() {
+            if (Math.random() < 0.04 && shootingStars.length < 5) {
+                createShootingStar();
+            }
 
-            if (glowBlur) {
+            for (let i = shootingStars.length - 1; i >= 0; i--) {
+                const star = shootingStars[i];
+                star.x += star.dx;
+                star.y += star.dy;
+                star.life++;
+
+                const progress = star.life / star.maxLife;
+                const alpha = Math.sin(progress * Math.PI);
+
+                const tailX = star.x - (star.dx / Math.hypot(star.dx, star.dy)) * star.length;
+                const tailY = star.y - (star.dy / Math.hypot(star.dx, star.dy)) * star.length;
+
+                // Estela degradada dorada/blanca
+                const grad = ctx.createLinearGradient(star.x, star.y, tailX, tailY);
+                grad.addColorStop(0, star.color);
+                grad.addColorStop(0.2, `rgba(255, 213, 79, ${0.85 * alpha})`);
+                grad.addColorStop(1, 'rgba(255, 213, 79, 0)');
+
+                ctx.strokeStyle = grad;
+                ctx.lineWidth = star.size;
+                ctx.lineCap = 'round';
+
+                ctx.beginPath();
+                ctx.moveTo(star.x, star.y);
+                ctx.lineTo(tailX, tailY);
+                ctx.stroke();
+
+                // Núcleo brillante
+                ctx.fillStyle = star.color;
                 ctx.shadowColor = '#FFD54F';
-                ctx.shadowBlur = glowBlur;
-            }
-
-            const step = (Math.PI * 2) / numPetals;
-            for (let i = 0; i < numPetals; i++) {
-                ctx.save();
-                ctx.rotate(i * step);
-
-                drawPetal(ctx, radius * 0.65, radius, 0.3);
-                if (fillColor) {
-                    ctx.fillStyle = fillColor;
-                    ctx.fill();
-                }
-                ctx.stroke();
-
-                // Inner sacred geometry circles
+                ctx.shadowBlur = 10;
                 ctx.beginPath();
-                ctx.arc(0, -radius * 0.82, radius * 0.06, 0, Math.PI * 2);
-                ctx.stroke();
-
-                ctx.restore();
-            }
-
-            // Outer golden ring boundary
-            ctx.beginPath();
-            ctx.arc(0, 0, radius, 0, Math.PI * 2);
-            ctx.stroke();
-
-            ctx.restore();
-        }
-
-        // Draw Golden Fibonacci Phyllotaxis Seed Mandala Core
-        function drawFibonacciSeeds(ctx, maxRadius, totalSeeds) {
-            ctx.save();
-            ctx.rotate(time * 0.05);
-
-            for (let i = 1; i <= totalSeeds; i++) {
-                const theta = i * GOLDEN_ANGLE;
-                const r = Math.sqrt(i / totalSeeds) * maxRadius;
-
-                const x = r * Math.cos(theta);
-                const y = r * Math.sin(theta);
-
-                const pulse = Math.sin(time * 2 + i * 0.05) * 0.5 + 0.5;
-                const seedSize = Math.max(1, (1 - r / maxRadius) * 3 + pulse);
-
-                const alpha = (1 - r / maxRadius) * 0.6 + 0.15;
-                ctx.fillStyle = `rgba(255, 215, 0, ${alpha})`;
-
-                ctx.beginPath();
-                ctx.arc(x, y, seedSize, 0, Math.PI * 2);
+                ctx.arc(star.x, star.y, star.size * 1.2, 0, Math.PI * 2);
                 ctx.fill();
+                ctx.shadowBlur = 0;
 
-                if (i % 8 === 0 && r > maxRadius * 0.2) {
-                    ctx.strokeStyle = `rgba(212, 175, 55, ${alpha * 0.4})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.beginPath();
-                    ctx.moveTo(x, y);
-                    const prevTheta = (i - 8) * GOLDEN_ANGLE;
-                    const prevR = Math.sqrt((i - 8) / totalSeeds) * maxRadius;
-                    ctx.lineTo(prevR * Math.cos(prevTheta), prevR * Math.sin(prevTheta));
-                    ctx.stroke();
+                if (star.life >= star.maxLife || star.x > width + 100 || star.y > height + 100) {
+                    shootingStars.splice(i, 1);
                 }
             }
-
-            ctx.restore();
-        }
-
-        // Draw Dual Golden Fibonacci Spirals
-        function drawGoldenSpirals(ctx, maxRadius) {
-            ctx.save();
-            ctx.rotate(time * 0.1);
-
-            const spiralTurns = 10 * Math.PI;
-            const a = maxRadius * 0.005;
-            const b = 0.14; // Logarithmic growth factor
-
-            for (let dir = -1; dir <= 1; dir += 2) {
-                ctx.beginPath();
-                for (let theta = 0; theta < spiralTurns; theta += 0.04) {
-                    const r = a * Math.exp(b * theta);
-                    if (r > maxRadius * 1.15) break;
-
-                    const x = r * Math.cos(dir * theta);
-                    const y = r * Math.sin(dir * theta);
-
-                    if (theta === 0) ctx.moveTo(x, y);
-                    else ctx.lineTo(x, y);
-                }
-
-                ctx.strokeStyle = 'rgba(255, 224, 130, 0.45)';
-                ctx.lineWidth = 1.5;
-                ctx.shadowColor = '#FFD54F';
-                ctx.shadowBlur = 12;
-                ctx.stroke();
-            }
-
-            ctx.restore();
         }
 
         function renderScene() {
             time += 0.01;
 
-            // Deep obsidian cosmic background gradient
-            const bgGrad = ctx.createRadialGradient(cx, cy, 30, cx, cy, Math.max(width, height) * 0.85);
-            bgGrad.addColorStop(0, '#0E1118');
-            bgGrad.addColorStop(0.5, '#07080B');
-            bgGrad.addColorStop(1, '#030406');
-            ctx.fillStyle = bgGrad;
-            ctx.fillRect(0, 0, width, height);
+            // Limpiar canvas para dejar ver la imagen de fondo fija de CSS
+            ctx.clearRect(0, 0, width, height);
 
-            // Draw cosmic stardust stars
+            // Dibujar destellos de estrellas suaves
             for (let star of stardust) {
-                star.alpha += Math.sin(time * 3 + star.x) * 0.003;
-                const currentAlpha = Math.max(0.08, Math.min(0.75, star.alpha));
+                star.alpha += Math.sin(time * 3 + star.x) * star.twinkleSpeed;
+                const currentAlpha = Math.max(0.1, Math.min(0.85, star.alpha));
                 ctx.fillStyle = `rgba(255, 230, 160, ${currentAlpha})`;
                 ctx.beginPath();
                 ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
                 ctx.fill();
             }
 
-            // Calculate center with subtle interactive mouse tilt offset
-            const mouseOffsetX = (mouseX - cx) * 0.02;
-            const mouseOffsetY = (mouseY - cy) * 0.02;
-            const mandX = cx + mouseOffsetX;
-            const mandY = cy + mouseOffsetY;
-
-            const maxRadius = Math.min(width, height) * 0.42;
-
-            ctx.save();
-            ctx.translate(mandX, mandY);
-
-            // 1. Fibonacci Seeds Phyllotaxis Pattern (Core & Middle)
-            drawFibonacciSeeds(ctx, maxRadius * 0.95, 258);
-
-            // 2. Dual Golden Logarithmic Spirals
-            drawGoldenSpirals(ctx, maxRadius);
-
-            // 3. Multi-Tier Sacred Fibonacci Petal Mandala Rings (55, 34, 21, 13, 8)
-            // Outer Ring (55 petals)
-            drawMandalaRing(
-                ctx, 
-                maxRadius * 1.1, 
-                55, 
-                -time * 0.08, 
-                'rgba(212, 175, 55, 0.25)', 
-                'rgba(212, 175, 55, 0.015)',
-                8
-            );
-
-            // Mid-Outer Ring (34 petals)
-            drawMandalaRing(
-                ctx, 
-                maxRadius * 0.82, 
-                34, 
-                time * 0.12, 
-                'rgba(255, 213, 79, 0.35)', 
-                'rgba(212, 175, 55, 0.025)',
-                10
-            );
-
-            // Mid Ring (21 petals)
-            drawMandalaRing(
-                ctx, 
-                maxRadius * 0.58, 
-                21, 
-                -time * 0.16, 
-                'rgba(255, 230, 130, 0.45)', 
-                'rgba(255, 213, 79, 0.035)',
-                12
-            );
-
-            // Inner Ring (13 petals)
-            const pulse = Math.sin(time * 2) * 0.04 + 1.0;
-            drawMandalaRing(
-                ctx, 
-                maxRadius * 0.36 * pulse, 
-                13, 
-                time * 0.22, 
-                'rgba(255, 249, 230, 0.65)', 
-                'rgba(255, 215, 0, 0.06)',
-                15
-            );
-
-            // Core Ring (8 petals)
-            drawMandalaRing(
-                ctx, 
-                maxRadius * 0.18 * pulse, 
-                8, 
-                -time * 0.3, 
-                'rgba(255, 255, 255, 0.85)', 
-                'rgba(255, 249, 230, 0.12)',
-                18
-            );
-
-            // 4. Glowing Central Core Singularity
-            const coreGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, maxRadius * 0.22);
-            coreGrad.addColorStop(0, 'rgba(255, 255, 255, 0.95)');
-            coreGrad.addColorStop(0.25, 'rgba(255, 215, 0, 0.65)');
-            coreGrad.addColorStop(0.65, 'rgba(212, 175, 55, 0.18)');
-            coreGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
-
-            ctx.fillStyle = coreGrad;
-            ctx.beginPath();
-            ctx.arc(0, 0, maxRadius * 0.22, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Bright Golden Center Point
-            ctx.fillStyle = '#FFF9E6';
-            ctx.shadowColor = '#FFD54F';
-            ctx.shadowBlur = 15;
-            ctx.beginPath();
-            ctx.arc(0, 0, 3.5, 0, Math.PI * 2);
-            ctx.fill();
-
-            ctx.restore();
+            // Dibujar efecto de estrellas fugaces
+            updateAndDrawShootingStars();
 
             requestAnimationFrame(renderScene);
         }
 
-        // Start animation engine
         window.onload = function() {
             resize();
             renderScene();
