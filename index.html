@@ -118,81 +118,23 @@
     <div class="relative z-10 min-h-screen flex flex-col justify-between">
 
         <!-- Navigation / Header Bar -->
-        <header class="sticky top-0 z-50 glass-panel border-b border-gold-500/20 px-4 lg:px-8 py-3">
+        <header class="sticky top-0 z-50 glass-panel border-b border-gold-500/20 px-4 lg:px-8 py-4">
             <div class="max-w-7xl mx-auto flex items-center justify-between">
-                <!-- Slogan Image in Top Left Corner -->
-                <div class="flex items-center space-x-3">
+                <!-- Slogan Image in Top Left Corner (Enlarged) -->
+                <div class="flex items-center">
                     <img src="Messenger_creation_193DEA5B-9CD6-4634-8DB4-F715FFF921EA.jpeg" 
                          alt="Eslogan ANEFF FRAQTUM" 
-                         class="h-12 sm:h-14 w-auto rounded-xl border border-gold-500/30 shadow-lg object-contain bg-obsidian-800"
-                         onerror="this.onerror=null; this.src='https://placehold.co/180x60/0E1118/FFD54F?text=ANEFF+FRAQTUM';">
+                         class="h-24 sm:h-28 lg:h-32 w-auto rounded-xl border border-gold-500/30 shadow-2xl object-contain bg-obsidian-800 p-1"
+                         onerror="this.onerror=null; this.src='https://placehold.co/320x100/0E1118/FFD54F?text=ANEFF+FRAQTUM';">
                 </div>
 
-                <!-- Minimal Action Controls -->
-                <div class="flex items-center space-x-2 sm:space-x-3">
-                    <!-- Audio Frequency Generator Toggle -->
-                    <button id="audio-toggle-btn" class="px-3 py-1.5 rounded-lg bg-obsidian-800 hover:bg-obsidian-700 border border-gold-500/30 text-gold-400 text-xs font-mono flex items-center space-x-2 transition-all">
-                        <i class="fa-solid fa-volume-xmark text-sm" id="audio-icon"></i>
-                        <span class="hidden sm:inline" id="audio-label">Resonancia Áurea (432Hz)</span>
-                    </button>
-
-                    <!-- Fractal Config Button -->
-                    <button id="fractal-control-btn" class="p-2 rounded-lg bg-obsidian-800 hover:bg-obsidian-700 border border-gold-500/30 text-gold-400 text-xs transition-all" title="Ajustar Fractal">
-                        <i class="fa-solid fa-sliders"></i>
-                    </button>
-
-                    <!-- GitHub Exporter Button -->
-                    <button id="export-gh-btn" class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-500 hover:to-gold-400 text-obsidian-900 font-semibold text-xs font-mono flex items-center space-x-2 shadow-md transition-all">
-                        <i class="fa-brands fa-github text-sm"></i>
-                        <span class="hidden md:inline">Exportar Repo</span>
-                    </button>
+                <!-- Association Trademark Header Tag -->
+                <div class="text-right font-mono text-xs text-gold-400">
+                    <span class="font-cinzel text-sm font-bold text-gold-gradient block">ANEFF™</span>
+                    <span class="text-[10px] text-slate-400">Portal Manifiesto 8/8/2026</span>
                 </div>
             </div>
         </header>
-
-        <!-- Hidden Controls Panel for Canvas Fractal Parameters -->
-        <div id="fractal-panel" class="hidden fixed top-16 right-4 lg:right-8 z-50 w-80 glass-panel rounded-2xl p-4 shadow-2xl text-xs font-mono space-y-4 text-slate-300 border border-gold-500/40">
-            <div class="flex justify-between items-center border-b border-gold-500/20 pb-2">
-                <span class="text-gold-400 font-bold flex items-center space-x-2">
-                    <i class="fa-solid fa-atom"></i>
-                    <span>Motor Fractal Perez (2D/3D)</span>
-                </span>
-                <button id="close-panel-btn" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            
-            <div>
-                <label class="block mb-1 flex justify-between">
-                    <span>Iteraciones (Fibonacci):</span>
-                    <span id="iter-val" class="text-gold-400">8</span>
-                </label>
-                <input type="range" id="iter-slider" min="3" max="21" value="8" class="w-full accent-gold-500">
-            </div>
-
-            <div>
-                <label class="block mb-1 flex justify-between">
-                    <span>Velocidad de Pulsación:</span>
-                    <span id="speed-val" class="text-gold-400">1.0x</span>
-                </label>
-                <input type="range" id="speed-slider" min="0.1" max="3.0" step="0.1" value="1.0" class="w-full accent-gold-500">
-            </div>
-
-            <div>
-                <label class="block mb-1 flex justify-between">
-                    <span>Zoom Fractal:</span>
-                    <span id="zoom-val" class="text-gold-400">1.618</span>
-                </label>
-                <input type="range" id="zoom-slider" min="0.5" max="4.0" step="0.1" value="1.618" class="w-full accent-gold-500">
-            </div>
-
-            <div>
-                <label class="block mb-1">Paleta Armónica:</label>
-                <select id="palette-select" class="w-full bg-obsidian-900 border border-gold-500/30 rounded p-1.5 text-gold-300 focus:outline-none">
-                    <option value="gold">Oro Cosmológico (&Phi; = 1.618)</option>
-                    <option value="emerald">Resonancia Cuántica (528Hz)</option>
-                    <option value="obsidian">Sombra Supraconsciente</option>
-                </select>
-            </div>
-        </div>
 
         <!-- Main Content Wrapper -->
         <main class="max-w-5xl mx-auto px-4 py-8 lg:py-12 space-y-10">
@@ -204,28 +146,16 @@
                 
                 <div class="inline-flex items-center space-x-2 bg-gold-500/10 border border-gold-500/30 rounded-full px-4 py-1 text-gold-400 text-xs font-mono mb-4">
                     <i class="fa-solid fa-bullhorn"></i>
-                    <span>ANUNCIO OFICIAL ANEFF • PORTAL MANIFIESTO 8/8/2026</span>
+                    <span>ANUNCIO OFICIAL ANEFF™ • PORTAL MANIFIESTO 8/8/2026</span>
                 </div>
 
                 <h1 class="font-cinzel text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gold-gradient mb-6 leading-tight">
                     🌐 8 / 8 / 2026 — El Espejo del Tiempo, la Creación del Valor y la Arquitectura Supraconsciente de Fraqtum
                 </h1>
 
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto font-light mb-8">
-                    Hay momentos donde la matemática deja de ser un cálculo abstracto para convertirse en el reflejo de la vida misma. Hoy contemplamos el número ocho no solo como la silueta del infinito, sino como la geometría del reloj de arena: la unión perfecta entre el tiempo que pasa y la eternidad que permanece. Desde el origen, la naturaleza respira a través de una armonía inalterable: la proporción áurea y los patrones fractales que regulan el cosmos. Sin embargo, los humanos hemos construido economías frágiles, basadas en deuda y sistemas centralizados donde el valor se diluye y la confianza se rompe. Hoy, desde la <strong class="text-gold-300">Asociación Nacional de Educación Financiera Fractal (ANEFF)</strong>, explicamos cómo se esta gestando el portal para presentarte <strong class="text-gold-400">Fraqtum</strong>: un ecosistema vivo de web 3.0 diseñado bajo las leyes inmutables del universo.
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto font-light mb-4">
+                    Hay momentos donde la matemática deja de ser un cálculo abstracto para convertirse en el reflejo de la vida misma. Hoy contemplamos el número ocho no solo como la silueta del infinito, sino como la geometría del reloj de arena: la unión perfecta entre el tiempo que pasa y la eternidad que permanece. Desde el origen, la naturaleza respira a través de una armonía inalterable: la proporción áurea y los patrones fractales que regulan el cosmos. Sin embargo, los humanos hemos construido economías frágiles, basadas en deuda y sistemas centralizados donde el valor se diluye y la confianza se rompe. Hoy, desde la <strong class="text-gold-300">Asociación Nacional de Educación Financiera Fractal™</strong>, explicamos cómo se esta gestando el portal para presentarte <strong class="text-gold-400">Fraqtum</strong>: un ecosistema vivo de web 3.0 diseñado bajo las leyes inmutables del universo.
                 </p>
-
-                <!-- Quick Action Buttons -->
-                <div class="flex flex-wrap justify-center gap-4 text-xs font-mono">
-                    <a href="#seeder-section" class="px-5 py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-obsidian-900 font-bold shadow-lg shadow-gold-500/20 flex items-center space-x-2 transition-all">
-                        <i class="fa-solid fa-signature"></i>
-                        <span>Unirse a los 144 Sembradores</span>
-                    </a>
-                    <button id="copy-markdown-btn" class="px-5 py-3 rounded-xl bg-obsidian-800 hover:bg-obsidian-700 border border-gold-500/30 text-gold-300 flex items-center space-x-2 transition-all">
-                        <i class="fa-regular fa-copy"></i>
-                        <span>Copiar Texto Raw / Markdown</span>
-                    </button>
-                </div>
             </section>
 
             <!-- Section 1: Hourglass Memory -->
@@ -237,15 +167,8 @@
                     <h2>La Memoria que Sana: El Reloj de Arena de Perez</h2>
                 </div>
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                    Los sistemas actuales colapsan ante el menor error. Para construir una economía verdaderamente indestructible, integramos el descubrimiento científico de Jean-Claude Perez: el Reloj de Arena Fractal. Este sistema posee un hemisferio de expansión (crecimiento) y un hemisferio de protección (amortiguamiento). En su centro nace la memoria asociativa PHAM. ¿Qué significa esto? Que, por primera vez, si tus registros, fondos o contratos sufren un ataque masivo o una interferencia crítica, la red reconoce su huella armónica y la autorrepara al instante. La verdadera seguridad no levanta muros; diseña estructuras capaces de sanarse a sí mismas.
+                    Los sistemas actuales colapsan ante el menor error. Para construir una economía verdaderamente indestructible, integramos el descubrimiento científico de Jean-Claude Perez: el Reloj de Arena Fractal. Este sistema posee un hemisferio de expansión (crecimiento) y un hemisferio de protección (amortiguamiento). En su centro nace la memoria asociativa PHAM. ¿Qué significa esto? Que, por primera vez, si tus registros, fondos o contratos sufren un ataque masivo o una interferencia crítica, la red reconoce su huella armónica y la autorrepara al instante. La verdadera seguridad no levanta muros; diseña structures capaces de sanarse a sí mismas.
                 </p>
-                <div class="bg-obsidian-800/80 rounded-xl p-4 border border-gold-500/20 font-mono text-xs text-gold-300 flex items-start space-x-3">
-                    <i class="fa-solid fa-shield-halved text-gold-400 text-lg mt-0.5"></i>
-                    <div>
-                        <strong class="text-gold-400 block mb-1">Invariancia de Paridad (Teorema 7 & PHAM):</strong>
-                        <span>Capacidad de recuperación instantánea O(1) con tolerancia matemática ilimitada ante corrupción de datos o interrupciones de red.</span>
-                    </div>
-                </div>
             </section>
 
             <!-- Section 2: Value Creation -->
@@ -330,62 +253,20 @@
                 </ul>
             </section>
 
-            <!-- Section 5: The 144 Seeders Threshold -->
+            <!-- Section 5: The 144 Seeders Threshold Concept -->
             <section id="seeder-section" class="glass-panel rounded-3xl p-6 lg:p-10 border border-gold-500/40 shadow-2xl relative">
-                <div class="flex flex-col md:flex-row items-center justify-between border-b border-gold-500/30 pb-6 mb-6 gap-4">
-                    <div>
-                        <div class="flex items-center space-x-3 text-gold-400 font-cinzel text-2xl font-bold">
-                            <span>🔮 El Umbral de los 144 Sembradores</span>
-                        </div>
-                        <p class="text-xs font-mono text-slate-400 mt-1">
-                            Protección Criptográfica Poscuántica (CRYSTALS-Dilithium & Falcon)
-                        </p>
+                <div class="border-b border-gold-500/30 pb-4 mb-4">
+                    <div class="flex items-center space-x-3 text-gold-400 font-cinzel text-2xl font-bold">
+                        <span>🔮 El Umbral de los 144 Sembradores</span>
                     </div>
-
-                    <!-- Counter Badge -->
-                    <div class="text-center md:text-right bg-obsidian-800 px-6 py-3 rounded-2xl border border-gold-500/40">
-                        <div class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">Sembradores Registrados</div>
-                        <div class="text-3xl font-mono font-bold text-gold-gradient">
-                            <span id="seeder-count">139</span> / 144
-                        </div>
-                    </div>
+                    <p class="text-xs font-mono text-slate-400 mt-1">
+                        Protección Criptográfica Poscuántica (CRYSTALS-Dilithium & Falcon)
+                    </p>
                 </div>
 
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
                     Por último, nuestra red está protegida con criptografía poscuántica (Dilithium/Falcon). Tus activos resistirán a los superordenadores del mañana. En la geometría del cosmos, el 144 es la masa crítica de resonancia. Solo requerimos 144 seguidores integrados para activar la red. Al completar este núcleo, liberaremos en exclusiva el enlace de acceso directo al motor 3D de Fraqtum, nuestra academia y los contratos.
                 </p>
-
-                <!-- Interactive Signature Form -->
-                <div id="seeder-form-box" class="bg-obsidian-800/80 rounded-2xl p-5 border border-gold-500/30 font-mono text-xs space-y-4">
-                    <div class="text-gold-400 font-bold text-sm flex items-center space-x-2">
-                        <i class="fa-solid fa-key"></i>
-                        <span>Firmar Registro de Sembrador (Génesis ANEFF)</span>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div>
-                            <label class="block text-slate-400 mb-1">Nombre o Pseudónimo Node:</label>
-                            <input type="text" id="seeder-name" placeholder="Ej. Node_Alpha_88" class="w-full bg-obsidian-900 border border-gold-500/30 rounded-xl px-3 py-2 text-gold-300 focus:border-gold-400 focus:outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-slate-400 mb-1">Dirección Wallet / Hash:</label>
-                            <input type="text" id="seeder-wallet" placeholder="0x88F...FQT" class="w-full bg-obsidian-900 border border-gold-500/30 rounded-xl px-3 py-2 text-gold-300 focus:border-gold-400 focus:outline-none">
-                        </div>
-                    </div>
-
-                    <button id="sign-seeder-btn" class="w-full py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-obsidian-900 font-bold font-mono text-sm shadow-lg shadow-gold-500/20 transition-all flex items-center justify-center space-x-2">
-                        <i class="fa-solid fa-fingerprint"></i>
-                        <span>Firmar y Reservar Acceso al Motor 3D</span>
-                    </button>
-                </div>
-
-                <!-- Recent Registered Seeders List -->
-                <div class="mt-6 pt-4 border-t border-gold-500/20">
-                    <div class="text-xs font-mono text-gold-400 mb-3 font-semibold">Últimas Firmas Verificadas en Cadena:</div>
-                    <div id="seeders-list" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 font-mono text-[11px]">
-                        <!-- Populated by JS -->
-                    </div>
-                </div>
             </section>
 
             <!-- Closing Reflection Section -->
@@ -394,49 +275,19 @@
                     &ldquo;Construir algo eterno exige respeto por los tiempos de maduración. Esta es la semilla. Si sientes el llamado de este portal 8/8 y deseas estar entre los 144 fundadores, déjanos tu señal.&rdquo;
                 </blockquote>
                 <div class="text-xs font-mono text-slate-400">
-                    — Asociación Nacional de Educación Financiera Fractal (ANEFF)
+                    — Asociación Nacional de Educación Financiera Fractal™
                 </div>
             </section>
 
         </main>
 
-        <!-- Footer with Reclamación de Derechos -->
-        <footer class="glass-panel border-t border-gold-500/20 py-6 px-4 mt-12 text-center font-mono text-xs text-slate-300 space-y-2">
-            <div class="text-gold-400 font-bold flex items-center justify-center space-x-2">
-                <i class="fa-solid fa-scale-balanced"></i>
-                <span>Aviso Oficial de Reclamación de Derechos de Autor e Identidad Intelectual</span>
+        <!-- Minimal Footer with Trademark -->
+        <footer class="glass-panel border-t border-gold-500/20 py-8 px-4 mt-12 text-center font-mono text-xs text-gold-400">
+            <div class="font-bold text-sm tracking-wide">
+                Asociación Nacional de Educación Financiera Fractal™
             </div>
-            <p class="text-slate-400 max-w-3xl mx-auto leading-relaxed text-[11px]">
-                ⚖️ <strong>Reclamación de Derechos Reservados:</strong> ANEFF &bull; FRAQTUM 2026. Se reserva la propiedad intelectual, derechos morales, arquitectura conceptual y modelos criptográficos derivados del Reloj de Arena de Perez y la Memoria PHAM. Queda expresamente reservado el derecho de uso legítimo para la comunidad ANEFF y su red fractal descentralizada.
-            </p>
         </footer>
 
-    </div>
-
-    <!-- GitHub Exporter Code Modal -->
-    <div id="code-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-3xl rounded-2xl p-6 space-y-4 border border-gold-500/50 max-h-[90vh] flex flex-col">
-            <div class="flex justify-between items-center border-b border-gold-500/30 pb-3">
-                <div class="text-gold-400 font-mono font-bold text-sm flex items-center space-x-2">
-                    <i class="fa-brands fa-github text-lg"></i>
-                    <span>Exportar Repositorio para GitHub / Markdown README.md</span>
-                </div>
-                <button id="close-modal-btn" class="text-slate-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-
-            <p class="text-xs font-mono text-slate-300">
-                Copia este texto estructurado para colocarlo como <code class="text-gold-400">README.md</code> en tu repositorio público de GitHub.
-            </p>
-
-            <textarea id="raw-markdown-area" readonly class="w-full flex-grow bg-obsidian-900 border border-gold-500/30 rounded-xl p-3 font-mono text-xs text-gold-300 focus:outline-none resize-none h-64"></textarea>
-
-            <div class="flex justify-end space-x-3 font-mono text-xs">
-                <button id="copy-modal-text-btn" class="px-4 py-2 rounded-xl bg-gold-500 hover:bg-gold-400 text-obsidian-900 font-bold transition-all flex items-center space-x-2">
-                    <i class="fa-regular fa-copy"></i>
-                    <span>Copiar Markdown</span>
-                </button>
-            </div>
-        </div>
     </div>
 
     <script>
@@ -452,7 +303,6 @@
             height = canvas.height = window.innerHeight;
         });
 
-        // Config State
         const config = {
             iterations: 8,
             speed: 1.0,
@@ -461,7 +311,6 @@
             time: 0
         };
 
-        // Mouse tracking for interactive distortion
         let mouseX = width / 2;
         let mouseY = height / 2;
 
@@ -470,7 +319,6 @@
             mouseY = e.clientY;
         });
 
-        // Drawing Perez Hourglass & Golden Ratio Geometry
         function drawFractal() {
             ctx.fillStyle = '#07080B';
             ctx.fillRect(0, 0, width, height);
@@ -481,7 +329,6 @@
 
             config.time += 0.005 * config.speed;
 
-            // Draw Golden Spiral / Hourglass Lattice
             ctx.save();
             ctx.translate(cx, cy);
 
@@ -492,36 +339,23 @@
                 const angle = i * phi * Math.PI * 2 + config.time;
                 const r = Math.sqrt(i / numNodes) * maxRadius;
 
-                // Perez Hourglass Symmetry transformation
                 const x = r * Math.cos(angle);
-                const y = r * Math.sin(angle) * Math.cos(angle * 0.5); // Hourglass waist warp
+                const y = r * Math.sin(angle) * Math.cos(angle * 0.5);
 
-                // Interactive shift
                 const dx = (mouseX - cx) * 0.05 * (r / maxRadius);
                 const dy = (mouseY - cy) * 0.05 * (r / maxRadius);
 
                 const finalX = x + dx;
                 const finalY = y + dy;
 
-                // Color Selection
-                let color;
-                if (config.palette === 'gold') {
-                    const alpha = 0.15 + 0.35 * Math.sin(i * 0.1 + config.time * 2);
-                    color = `rgba(212, 175, 55, ${alpha})`;
-                } else if (config.palette === 'emerald') {
-                    const alpha = 0.2 + 0.4 * Math.sin(i * 0.1 + config.time * 2);
-                    color = `rgba(52, 211, 153, ${alpha})`;
-                } else {
-                    const alpha = 0.1 + 0.2 * Math.cos(i * 0.1);
-                    color = `rgba(148, 163, 184, ${alpha})`;
-                }
+                const alpha = 0.15 + 0.35 * Math.sin(i * 0.1 + config.time * 2);
+                const color = `rgba(212, 175, 55, ${alpha})`;
 
                 ctx.beginPath();
                 ctx.arc(finalX, finalY, Math.max(1, 3 * (1 - r / maxRadius)), 0, Math.PI * 2);
                 ctx.fillStyle = color;
                 ctx.fill();
 
-                // Connect nearest nodes with Golden ratio threads
                 if (i % 3 === 0 && i > 0) {
                     const prevAngle = (i - 1) * phi * Math.PI * 2 + config.time;
                     const prevR = Math.sqrt((i - 1) / numNodes) * maxRadius;
@@ -537,7 +371,6 @@
                 }
             }
 
-            // Draw Central Hourglass Waist Ring
             ctx.beginPath();
             ctx.ellipse(0, 0, 40 * config.zoom, 15 * config.zoom, config.time, 0, Math.PI * 2);
             ctx.strokeStyle = 'rgba(255, 215, 0, 0.4)';
@@ -550,183 +383,6 @@
         }
 
         drawFractal();
-
-        // Control panel handlers
-        const panel = document.getElementById('fractal-panel');
-        document.getElementById('fractal-control-btn').addEventListener('click', () => panel.classList.toggle('hidden'));
-        document.getElementById('close-panel-btn').addEventListener('click', () => panel.classList.add('hidden'));
-
-        document.getElementById('iter-slider').addEventListener('input', (e) => {
-            config.iterations = parseInt(e.target.value);
-            document.getElementById('iter-val').innerText = e.target.value;
-        });
-
-        document.getElementById('speed-slider').addEventListener('input', (e) => {
-            config.speed = parseFloat(e.target.value);
-            document.getElementById('speed-val').innerText = e.target.value + 'x';
-        });
-
-        document.getElementById('zoom-slider').addEventListener('input', (e) => {
-            config.zoom = parseFloat(e.target.value);
-            document.getElementById('zoom-val').innerText = e.target.value;
-        });
-
-        document.getElementById('palette-select').addEventListener('change', (e) => {
-            config.palette = e.target.value;
-        });
-
-        // Web Audio API Synthesizer (432 Hz Golden Resonance)
-        let audioCtx = null;
-        let osc = null;
-        let gainNode = null;
-        let isAudioPlaying = false;
-
-        const audioBtn = document.getElementById('audio-toggle-btn');
-        const audioIcon = document.getElementById('audio-icon');
-        const audioLabel = document.getElementById('audio-label');
-
-        audioBtn.addEventListener('click', () => {
-            if (!isAudioPlaying) {
-                if (!audioCtx) {
-                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                }
-                
-                osc = audioCtx.createOscillator();
-                gainNode = audioCtx.createGain();
-
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(432, audioCtx.currentTime); // 432 Hz Tuning
-
-                gainNode.gain.setValueAtTime(0.01, audioCtx.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 2);
-
-                osc.connect(gainNode);
-                gainNode.connect(audioCtx.destination);
-
-                osc.start();
-                isAudioPlaying = true;
-
-                audioIcon.className = "fa-solid fa-volume-high text-sm text-emerald-400";
-                audioLabel.innerText = "Resonancia 432Hz Activa";
-                audioBtn.classList.add("border-emerald-500/50");
-            } else {
-                if (gainNode) {
-                    gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.5);
-                    setTimeout(() => {
-                        osc.stop();
-                        isAudioPlaying = false;
-                        audioIcon.className = "fa-solid fa-volume-xmark text-sm";
-                        audioLabel.innerText = "Resonancia Áurea (432Hz)";
-                        audioBtn.classList.remove("border-emerald-500/50");
-                    }, 500);
-                }
-            }
-        });
-
-        // Seeders Ledger Registry
-        const initialSeeders = [
-            { name: "Carlos_Perez_Founder", wallet: "0x88f1...FQT_ROOT" },
-            { name: "ANEFF_Node_001", wallet: "0x1618...PHI_NODE" },
-            { name: "Quantum_Gate_144", wallet: "0x777a...PQC_BEACON" },
-            { name: "Alpha_Fractal_88", wallet: "0x382c...STAKE_01" },
-            { name: "Perez_Hourglass_Node", wallet: "0x0001...PHAM_VAL" },
-            { name: "Sovereign_Identity_9", wallet: "0x9990...SBT_PASSPORT" },
-            { name: "Edu_Node_Kids_01", wallet: "0x5552...KIDS_NET" },
-            { name: "Subnet_IA_Bittensor", wallet: "0x3141...POFR_CORE" }
-        ];
-
-        let count = 139;
-        const countEl = document.getElementById('seeder-count');
-        const listEl = document.getElementById('seeders-list');
-
-        function renderSeeders() {
-            listEl.innerHTML = '';
-            initialSeeders.forEach((s) => {
-                const item = document.createElement('div');
-                item.className = "bg-obsidian-900/90 p-2 rounded-lg border border-gold-500/20 truncate";
-                item.innerHTML = `<span class="text-gold-400 font-bold block truncate">${s.name}</span><span class="text-slate-500 text-[10px] truncate block">${s.wallet}</span>`;
-                listEl.appendChild(item);
-            });
-        }
-
-        renderSeeders();
-
-        document.getElementById('sign-seeder-btn').addEventListener('click', () => {
-            const nameInput = document.getElementById('seeder-name');
-            const walletInput = document.getElementById('seeder-wallet');
-
-            const name = nameInput.value.trim() || `Sembrador_Nº_${count + 1}`;
-            const wallet = walletInput.value.trim() || `0x888${Math.floor(Math.random()*8999+1000)}...FQT`;
-
-            if (count < 144) {
-                count++;
-                countEl.innerText = count;
-                initialSeeders.unshift({ name, wallet });
-                renderSeeders();
-
-                nameInput.value = '';
-                walletInput.value = '';
-
-                alert(`¡Firma verificada exitosamente! Te has registrado como el Sembrador Nº ${count} de 144.`);
-            } else {
-                alert("¡El núcleo de 144 Sembradores se ha completado! El enlace al motor 3D y contratos está disponible.");
-            }
-        });
-
-        // Copy Markdown Content Functionality
-        const rawMarkdownText = `# 🌐 8 / 8 / 2026 — El Espejo del Tiempo, la Creación del Valor y la Arquitectura Supraconsciente de Fraqtum
-
-Hay momentos donde la matemática deja de ser un cálculo abstracto para convertirse en el reflejo de la vida misma. Hoy contemplamos el número ocho no solo como la silueta del infinito, sino como la geometría del reloj de arena: la unión perfecta entre el tiempo que pasa y la eternidad que permanece. Desde el origen, la naturaleza respira a través de una armonía inalterable: la proporción áurea y los patrones fractales que regulan el cosmos. Sin embargo, los humanos hemos construido economías frágiles, basadas en deuda y sistemas centralizados donde el valor se diluye y la confianza se rompe. Hoy, desde la **Asociación Nacional de Educación Financiera Fractal (ANEFF)**, explicamos cómo se esta gestando el portal para presentarte **Fraqtum**: un ecosistema vivo de web 3.0 diseñado bajo las leyes inmutables del universo.
-
-## ⏳ La Memoria que Sana: El Reloj de Arena de Perez
-Los sistemas actuales colapsan ante el menor error. Para construir una economía verdaderamente indestructible, integramos el descubrimiento científico de Jean-Claude Perez: el Reloj de Arena Fractal. Este sistema posee un hemisferio de expansión (crecimiento) y un hemisferio de protección (amortiguamiento). En su centro nace la memoria asociativa PHAM. ¿Qué significa esto? Que, por primera vez, si tus registros, fondos o contratos sufren un ataque masivo o una interferencia crítica, la red reconoce su huella armónica y la autorrepara al instante. La verdadera seguridad no levanta muros; diseña estructuras capaces de sanarse a sí mismas.
-
-## ⚡ ¿De dónde nace el valor en la Criptoeconomía Áurea?
-Muchos dudan del valor digital. Bitcoin nos enseñó que la unión de escasez matemática y energía (Proof of Work) crea un activo incensurable. Fraqtum da el siguiente salto evolutivo. No quemamos energía resolviendo acertijos vacíos, ni dependemos de la especulación. Creamos una antientropía económica respaldada por tres pilares:
-* **Cómputo útil (PoFR):** Los nodos aportan procesamiento para modelos predictivos de inteligencia artificial financiera.
-* **Límite armónico (Φ):** Existirán máximo de tokens (F12 = 144,000,000), eliminando la hiperinflación.
-* **Comercio real (Subwebs):** Cualquier comercio o escuela puede crear su micro-economía y pasarela de pago en 5 minutos, inyectando liquidez real.
-
-## 🛡️ Nodos, Gas y el Pasaporte de Identidad Soberana (SBT)
-En un banco tradicional, tu dinero enriquece a otros. En Fraqtum, al aportar al pool de liquidez, te conviertes en un guardián de la red. A diferencia del viejo modelo, el 100% de las comisiones de red (gas áureo) se reparte éticamente: el nutre la reserva global para proteger el precio, y el premia directamente a la comunidad. Para acceder a este nivel, el usuario debe acuñar su Pasaporte de Identidad Digital Soberana (SBT). ¿Vale la pena el costo de crearlo? Absolutamente. No es un gasto, es un escudo sagrado. Este pasaporte erradica los bots, certifica tu aprendizaje real (Proof of Knowledge) y te otorga el derecho de gobernanza y multiplicadores de rendimiento que un usuario común jamás tendría.
-
-## 🌲 El Árbol Fractal: Referidos y Abundancia Inmortal
-Los esquemas de invitación tradicionales mueren rápido porque la gente extrae sus ganancias y abandona la red. Nuestro modelo es un ecosistema vivo que se autorreplica:
-* **Puntos de fidelidad con respaldo:** Las recompensas por invitar a comercios o estudiantes no se entregan para ser drenadas, sino como puntos de fidelidad (sub-tokens) respaldados por la red principal, fomentando su uso dentro de nuestro propio ecosistema comercial y educativo.
-* **Anclaje indestructible:** Además, el 50% de todo lo generado se auto-bloquea automáticamente en staking. Cada persona que invitas crea un piso de liquidez permanente que hace más sólida tu propia economía.
-
-## 🔮 El Umbral de los 144 Sembradores
-Por último, nuestra red está protegida con criptografía poscuántica (Dilithium/Falcon). Tus activos resistirán a los superordenadores del mañana. En la geometría del cosmos, el 144 es la masa crítica de resonancia. Solo requerimos 144 seguidores integrados para activar la red. Al completar este núcleo, liberaremos en exclusiva el enlace de acceso directo al motor 3D de Fraqtum, nuestra academia y los contratos.
-
-> *Construir algo eterno exige respeto por los tiempos de maduración. Esta es la semilla. Si sientes el llamado de este portal 8/8 y deseas estar entre los 144 fundadores, déjanos tu señal.*`;
-
-        const codeModal = document.getElementById('code-modal');
-        const markdownArea = document.getElementById('raw-markdown-area');
-
-        document.getElementById('export-gh-btn').addEventListener('click', () => {
-            markdownArea.value = rawMarkdownText;
-            codeModal.classList.remove('hidden');
-        });
-
-        document.getElementById('close-modal-btn').addEventListener('click', () => {
-            codeModal.classList.add('hidden');
-        });
-
-        document.getElementById('copy-markdown-btn').addEventListener('click', () => {
-            const el = document.createElement('textarea');
-            el.value = rawMarkdownText;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-            alert("¡Manifiesto copiado en formato Markdown para tu repositorio de GitHub!");
-        });
-
-        document.getElementById('copy-modal-text-btn').addEventListener('click', () => {
-            markdownArea.select();
-            document.execCommand('copy');
-            alert("¡Texto copiado correctamente!");
-        });
     </script>
 </body>
 </html>
