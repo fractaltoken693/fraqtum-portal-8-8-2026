@@ -56,7 +56,7 @@
             }
         }
     </script>
-    
+
     <style>
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
@@ -74,34 +74,34 @@
             background: #D4AF37;
         }
 
-        /* Custom Background Image Configuration */
+        /* Custom Background Image Configuration con capas más transparentes */
         body {
-            background-image: radial-gradient(rgba(7, 8, 11, 0.25), rgba(3, 4, 6, 0.50)), url('Gemini_Generated_Image_9d0a709d0a709d0a.png');
+            background-image: radial-gradient(rgba(7, 8, 11, 0.10), rgba(3, 4, 6, 0.25)), url('Gemini_Generated_Image_9d0a709d0a709d0a.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
         }
 
-        /* Glassmorphism Styles con opacidad reducida para mejor visibilidad del fondo */
+        /* Glassmorphism Styles con opacidad y desenfoque reducidos para máxima visibilidad del fondo */
         .glass-panel {
-            background: rgba(8, 11, 18, 0.25);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+            background: rgba(8, 11, 18, 0.08);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             border: 1px solid rgba(212, 175, 55, 0.25);
-            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.65);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
         }
         
         .glass-card {
-            background: rgba(14, 18, 28, 0.20);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(14, 18, 28, 0.06);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
             border: 1px solid rgba(212, 175, 55, 0.20);
             transition: all 0.3s ease;
         }
         .glass-card:hover {
-            background: rgba(18, 24, 38, 0.32);
+            background: rgba(18, 24, 38, 0.15);
             border-color: rgba(212, 175, 55, 0.55);
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
             transform: translateY(-2px);
@@ -140,7 +140,7 @@
                 <div class="flex items-center">
                     <img src="Messenger_creation_193DEA5B-9CD6-4634-8DB4-F715FFF921EA.jpeg" 
                          alt="Eslogan ANEFF FRAQTUM" 
-                         class="h-32 w-32 sm:h-40 sm:w-40 lg:h-48 lg:w-48 rounded-full border border-gold-500/30 shadow-2xl object-cover bg-obsidian-800/40 p-1"
+                         class="h-32 w-32 sm:h-40 sm:w-40 lg:h-48 lg:w-48 rounded-full border border-gold-500/30 shadow-2xl object-cover bg-obsidian-800/20 p-1"
                          onerror="this.onerror=null; this.src='https://placehold.co/400x400/0E1118/FFD54F?text=ANEFF+FRAQTUM';">
                 </div>
 
@@ -190,7 +190,7 @@
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-obsidian-800/25 p-5 rounded-xl border border-gold-500/20 space-y-2">
+                    <div class="bg-obsidian-800/10 p-5 rounded-xl border border-gold-500/20 space-y-2">
                         <div class="text-gold-400 font-bold flex items-center space-x-2 text-sm font-mono">
                             <i class="fa-solid fa-arrow-trend-up"></i>
                             <span>1. Hemisferio Norte (Expansión y Crecimiento)</span>
@@ -200,7 +200,7 @@
                         </p>
                     </div>
 
-                    <div class="bg-obsidian-800/25 p-5 rounded-xl border border-gold-500/20 space-y-2">
+                    <div class="bg-obsidian-800/10 p-5 rounded-xl border border-gold-500/20 space-y-2">
                         <div class="text-gold-400 font-bold flex items-center space-x-2 text-sm font-mono">
                             <i class="fa-solid fa-shield-halved"></i>
                             <span>2. Hemisferio Sur (Protección y Amortiguamiento)</span>
@@ -211,7 +211,7 @@
                     </div>
                 </div>
 
-                <div class="bg-gold-500/10 border border-gold-500/30 rounded-xl p-5 space-y-2">
+                <div class="bg-gold-500/5 border border-gold-500/30 rounded-xl p-5 space-y-2">
                     <p class="text-slate-100 text-sm leading-relaxed">
                         En el centro de esta geometría nace la <strong class="text-gold-400">Memoria Asociativa PHAM</strong> (<i>Perez Hourglass Associative Memory</i>), sostenida por una ley de simetría inalterable que garantiza que la información nunca pierda su coherencia original ni sufra corrupción de datos.
                     </p>
@@ -235,28 +235,28 @@
 
                 <!-- 4 Generations Timeline -->
                 <div class="space-y-3 font-mono text-xs sm:text-sm">
-                    <div class="bg-obsidian-800/20 p-4 rounded-xl border border-gold-500/20 flex flex-col md:flex-row md:items-center gap-3">
+                    <div class="bg-obsidian-800/10 p-4 rounded-xl border border-gold-500/20 flex flex-col md:flex-row md:items-center gap-3">
                         <span class="text-gold-400 font-bold border border-gold-500/30 px-3 py-1 rounded-lg bg-gold-500/10 shrink-0">1. 1991</span>
                         <div class="text-slate-200">
                             <strong class="text-gold-300">Stuart Haber & W. Scott Stornetta:</strong> Crearon el sellado temporal inmutable (<i>timestamping</i>) para certificar datos en cadenas entrelazadas unidimensionales (1D).
                         </div>
                     </div>
 
-                    <div class="bg-obsidian-800/20 p-4 rounded-xl border border-gold-500/20 flex flex-col md:flex-row md:items-center gap-3">
+                    <div class="bg-obsidian-800/10 p-4 rounded-xl border border-gold-500/20 flex flex-col md:flex-row md:items-center gap-3">
                         <span class="text-gold-400 font-bold border border-gold-500/30 px-3 py-1 rounded-lg bg-gold-500/10 shrink-0">2. 2008</span>
                         <div class="text-slate-200">
                             <strong class="text-gold-300">Satoshi Nakamoto:</strong> Combinó el sellado de Haber y Stornetta con la teoría de juegos y el consumo de energía (Proof of Work) para crear la escasez digital bidimensional (2D) de Bitcoin ($21{,}000{,}000 \text{ BTC}$).
                         </div>
                     </div>
 
-                    <div class="bg-obsidian-800/20 p-4 rounded-xl border border-gold-500/20 flex flex-col md:flex-row md:items-center gap-3">
+                    <div class="bg-obsidian-800/10 p-4 rounded-xl border border-gold-500/20 flex flex-col md:flex-row md:items-center gap-3">
                         <span class="text-gold-400 font-bold border border-gold-500/30 px-3 py-1 rounded-lg bg-gold-500/10 shrink-0">3. 2018</span>
                         <div class="text-slate-200">
                             <strong class="text-gold-300">Quantum Resistant Ledger (QRL):</strong> Introdujo la primera defensa anticuántica mediante árboles de firmas Hash ($\text{XMSS / NIST SP 800-208}$), protegiendo la inmutabilidad ante el algoritmo de Shor.
                         </div>
                     </div>
 
-                    <div class="bg-obsidian-800/20 p-4 rounded-xl border border-gold-500/30 flex flex-col md:flex-row md:items-center gap-3 bg-gold-500/5">
+                    <div class="bg-obsidian-800/10 p-4 rounded-xl border border-gold-500/30 flex flex-col md:flex-row md:items-center gap-3 bg-gold-500/5">
                         <span class="text-gold-400 font-bold border border-gold-500/50 px-3 py-1 rounded-lg bg-gold-500/20 shrink-0">4. Presente</span>
                         <div class="text-slate-200">
                             <strong class="text-gold-300">FRAQTUM / ANEFF:</strong> Evolucionamos la cadena lineal hacia una <strong class="text-gold-400">Matriz Holárquica Multidimensional</strong>. No quemamos energía en cálculos estériles ni dependemos de especulación vacía.
@@ -269,7 +269,7 @@
                 </p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="bg-obsidian-800/20 p-4 rounded-xl border border-gold-500/20 hover:border-gold-500/40 transition-all backdrop-blur-sm">
+                    <div class="bg-obsidian-800/10 p-4 rounded-xl border border-gold-500/20 hover:border-gold-500/40 transition-all backdrop-blur-sm">
                         <div class="text-gold-400 font-bold mb-2 flex items-center space-x-2 text-sm font-mono">
                             <i class="fa-solid fa-microchip"></i>
                             <span>Cómputo Útil (PoFR)</span>
@@ -279,7 +279,7 @@
                         </p>
                     </div>
 
-                    <div class="bg-obsidian-800/20 p-4 rounded-xl border border-gold-500/20 hover:border-gold-500/40 transition-all backdrop-blur-sm">
+                    <div class="bg-obsidian-800/10 p-4 rounded-xl border border-gold-500/20 hover:border-gold-500/40 transition-all backdrop-blur-sm">
                         <div class="text-gold-400 font-bold mb-2 flex items-center space-x-2 text-sm font-mono">
                             <i class="fa-solid fa-infinity"></i>
                             <span>Límite Armónico ($F_{12}$)</span>
@@ -289,7 +289,7 @@
                         </p>
                     </div>
 
-                    <div class="bg-obsidian-800/20 p-4 rounded-xl border border-gold-500/20 hover:border-gold-500/40 transition-all backdrop-blur-sm">
+                    <div class="bg-obsidian-800/10 p-4 rounded-xl border border-gold-500/20 hover:border-gold-500/40 transition-all backdrop-blur-sm">
                         <div class="text-gold-400 font-bold mb-2 flex items-center space-x-2 text-sm font-mono">
                             <i class="fa-solid fa-store"></i>
                             <span>Comercio Real</span>
@@ -314,14 +314,14 @@
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-obsidian-800/25 p-4 rounded-xl border border-gold-500/20 flex items-start space-x-3">
+                    <div class="bg-obsidian-800/10 p-4 rounded-xl border border-gold-500/20 flex items-start space-x-3">
                         <div class="text-gold-400 text-lg font-bold font-mono">61.8%</div>
                         <div class="text-xs text-slate-200">
                             Se destina directamente a la <strong class="text-gold-300">Reserva Armónica de Liquidez</strong> ($x \cdot y = k$), estabilizando el precio y protegiendo el mercado contra la volatilidad.
                         </div>
                     </div>
 
-                    <div class="bg-obsidian-800/25 p-4 rounded-xl border border-gold-500/20 flex items-start space-x-3">
+                    <div class="bg-obsidian-800/10 p-4 rounded-xl border border-gold-500/20 flex items-start space-x-3">
                         <div class="text-gold-400 text-lg font-bold font-mono">38.2%</div>
                         <div class="text-xs text-slate-200">
                             Premia directamente a la comunidad y a los operadores de <strong class="text-gold-300">Nodos Validadores ANEFF</strong>.
@@ -329,7 +329,7 @@
                     </div>
                 </div>
 
-                <div class="bg-obsidian-800/30 p-5 rounded-xl border border-gold-500/20 space-y-3">
+                <div class="bg-obsidian-800/15 p-5 rounded-xl border border-gold-500/20 space-y-3">
                     <p class="text-slate-100 text-sm leading-relaxed">
                         Para participar activamente de esta distribución y gozar de gobernanza, el usuario acuña su <strong class="text-gold-400">Pasaporte de Identidad Digital Soberana (SBT)</strong> (<code class="text-gold-300 font-mono text-xs">SBT_EDUFT.sol</code>).
                     </p>
@@ -367,7 +367,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- 1. Swap Áureo -->
-                    <div class="bg-obsidian-800/30 p-5 rounded-xl border border-gold-500/20 flex flex-col justify-between space-y-4 hover:border-gold-500/40 transition-all">
+                    <div class="bg-obsidian-800/10 p-5 rounded-xl border border-gold-500/20 flex flex-col justify-between space-y-4 hover:border-gold-500/40 transition-all">
                         <div class="space-y-3">
                             <div class="flex items-center justify-between">
                                 <div class="text-gold-400 font-bold text-sm font-mono flex items-center space-x-2">
@@ -386,7 +386,7 @@
                     </div>
 
                     <!-- 2. Pool de Liquidez -->
-                    <div class="bg-obsidian-800/30 p-5 rounded-xl border border-gold-500/20 flex flex-col justify-between space-y-4 hover:border-gold-500/40 transition-all">
+                    <div class="bg-obsidian-800/10 p-5 rounded-xl border border-gold-500/20 flex flex-col justify-between space-y-4 hover:border-gold-500/40 transition-all">
                         <div class="space-y-3">
                             <div class="flex items-center justify-between">
                                 <div class="text-gold-400 font-bold text-sm font-mono flex items-center space-x-2">
@@ -405,7 +405,7 @@
                     </div>
 
                     <!-- 3. Staking Antientrópico -->
-                    <div class="bg-obsidian-800/30 p-5 rounded-xl border border-gold-500/20 flex flex-col justify-between space-y-4 hover:border-gold-500/40 transition-all">
+                    <div class="bg-obsidian-800/10 p-5 rounded-xl border border-gold-500/20 flex flex-col justify-between space-y-4 hover:border-gold-500/40 transition-all">
                         <div class="space-y-3">
                             <div class="flex items-center justify-between">
                                 <div class="text-gold-400 font-bold text-sm font-mono flex items-center space-x-2">
@@ -437,14 +437,14 @@
                 </p>
                 
                 <ul class="space-y-3 font-mono text-xs sm:text-sm text-slate-200">
-                    <li class="flex items-start space-x-3 bg-obsidian-800/20 p-4 rounded-xl border border-gold-500/10">
+                    <li class="flex items-start space-x-3 bg-obsidian-800/10 p-4 rounded-xl border border-gold-500/10">
                         <i class="fa-solid fa-coins text-gold-400 mt-1"></i>
                         <div>
                             <strong class="text-gold-300 block mb-1">1. Puntos de Fidelidad con Respaldo Real:</strong>
                             <span>Las recompensas por integrar comercios o estudiantes se otorgan como sub-tokens con respaldo en la reserva principal, incentivando la circulación comercial y educativa dentro del propio ecosistema.</span>
                         </div>
                     </li>
-                    <li class="flex items-start space-x-3 bg-obsidian-800/20 p-4 rounded-xl border border-gold-500/10">
+                    <li class="flex items-start space-x-3 bg-obsidian-800/10 p-4 rounded-xl border border-gold-500/10">
                         <i class="fa-solid fa-lock text-gold-400 mt-1"></i>
                         <div>
                             <strong class="text-gold-300 block mb-1">2. Anclaje Indestructible:</strong>
@@ -469,18 +469,18 @@
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-obsidian-800/25 p-4 rounded-xl border border-gold-500/20">
+                    <div class="bg-obsidian-800/10 p-4 rounded-xl border border-gold-500/20">
                         <strong class="text-gold-300 text-xs font-mono block mb-1">Firmas Hash XMSS (tecnología QRL)</strong>
                         <p class="text-xs text-slate-200">Protegen los cofres de reserva (vaults), la tesorería global y los nodos validadores soberanos.</p>
                     </div>
 
-                    <div class="bg-obsidian-800/25 p-4 rounded-xl border border-gold-500/20">
+                    <div class="bg-obsidian-800/10 p-4 rounded-xl border border-gold-500/20">
                         <strong class="text-gold-300 text-xs font-mono block mb-1">Criptografía en Retículos (Falcon-512 y CRYSTALS-Dilithium)</strong>
                         <p class="text-xs text-slate-200">Proteje las transacciones del día a día dentro de la EVM, aprovechando la ligereza de Falcon ($\sim 666 \text{ bytes}$) para garantizar ejecuciones ultrarrápidas y de bajo costo.</p>
                     </div>
                 </div>
 
-                <div class="bg-gold-500/10 border border-gold-500/30 p-5 rounded-2xl text-slate-100 text-sm leading-relaxed">
+                <div class="bg-gold-500/5 border border-gold-500/30 p-5 rounded-2xl text-slate-100 text-sm leading-relaxed">
                     En la geometría armónica del cosmos, el <strong class="text-gold-400">144</strong> representa la masa crítica de resonancia. Solo requerimos <strong class="text-gold-300">144 Sembradores Iniciales</strong> comprometidos para activar oficialmente la red. Al completar este núcleo pionero, liberaremos en exclusiva el acceso al motor 3D interactivo de FRAQTUM, la plataforma académica descentralizada y los contratos inteligentes de gobernanza.
                 </div>
             </section>
