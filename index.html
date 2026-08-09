@@ -1,293 +1,4 @@
-<!DOCTYPE html>
-<html lang="es" class="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FRAQTUM | Portal 8/8/2026 - ANEFF GitHub DApp</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Fira+Code:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- STREAMING_CHUNK:Configuring Tailwind CSS theme... -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        gold: {
-                            100: '#FFF9E6',
-                            300: '#FFE082',
-                            400: '#FFD54F',
-                            500: '#D4AF37',
-                            600: '#AA820A',
-                            700: '#805E00',
-                        },
-                        obsidian: {
-                            900: '#07080B',
-                            800: '#0E1118',
-                            700: '#161B26',
-                            600: '#212938'
-                        }
-                    },
-                    fontFamily: {
-                        cinzel: ['Cinzel', 'serif'],
-                        inter: ['Inter', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- STREAMING_CHUNK:Styling page layout and glassmorphism... -->
-    <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #07080B;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #212938;
-            border-radius: 4px;
-            border: 1px solid #D4AF37;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #D4AF37;
-        }
-
-        /* Glassmorphism Styles */
-        .glass-panel {
-            background: rgba(10, 13, 20, 0.82);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(212, 175, 55, 0.25);
-            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.8);
-        }
-        
-        .glass-card {
-            background: rgba(18, 22, 32, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            transition: all 0.3s ease;
-        }
-        .glass-card:hover {
-            border-color: rgba(212, 175, 55, 0.55);
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
-            transform: translateY(-2px);
-        }
-
-        /* Golden Gradient Text */
-        .text-gold-gradient {
-            background: linear-gradient(135deg, #FFF9E6 0%, #FFD54F 40%, #D4AF37 70%, #AA820A 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Shimmer Animation */
-        @keyframes goldenGlow {
-            0%, 100% { opacity: 0.5; filter: drop-shadow(0 0 15px rgba(212,175,55,0.4)); }
-            50% { opacity: 0.95; filter: drop-shadow(0 0 35px rgba(212,175,55,0.85)); }
-        }
-        .animate-golden-glow {
-            animation: goldenGlow 4s infinite ease-in-out;
-        }
-
-        /* Interactive Canvas Background */
-        #fractal-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-        }
-    </style>
-</head>
-<body class="bg-obsidian-900 text-slate-200 font-inter min-h-screen relative overflow-x-hidden selection:bg-gold-500 selection:text-obsidian-900">
-
-    <!-- STREAMING_CHUNK:Rendering Canvas Background Element... -->
-    <!-- Interactive WebGL/Canvas Sacred Mandala & Golden Spiral Background -->
-    <canvas id="fractal-canvas"></canvas>
-
-    <!-- UI Overlay Wrapper -->
-    <div class="relative z-10 min-h-screen flex flex-col justify-between">
-
-        <!-- STREAMING_CHUNK:Building Header Bar... -->
-        <!-- Navigation / Header Bar -->
-        <header class="sticky top-0 z-50 glass-panel border-b border-gold-500/20 px-4 lg:px-8 py-4">
-            <div class="max-w-7xl mx-auto flex items-center justify-between">
-                <!-- Slogan Image in Top Left Corner (Enlarged) -->
-                <div class="flex items-center">
-                    <img src="Messenger_creation_193DEA5B-9CD6-4634-8DB4-F715FFF921EA.jpeg" 
-                         alt="Eslogan ANEFF FRAQTUM" 
-                         class="h-24 sm:h-28 lg:h-32 w-auto rounded-xl border border-gold-500/30 shadow-2xl object-contain bg-obsidian-800 p-1"
-                         onerror="this.onerror=null; this.src='https://placehold.co/320x100/0E1118/FFD54F?text=ANEFF+FRAQTUM';">
-                </div>
-
-                <!-- Association Trademark Header Tag -->
-                <div class="text-right font-mono text-xs text-gold-400">
-                    <span class="font-cinzel text-sm font-bold text-gold-gradient block">ANEFF™</span>
-                    <span class="text-[10px] text-slate-400">Portal Manifiesto 8/8/2026</span>
-                </div>
-            </div>
-        </header>
-
-        <!-- STREAMING_CHUNK:Building Main Manifesto Content... -->
-        <!-- Main Content Wrapper -->
-        <main class="max-w-5xl mx-auto px-4 py-8 lg:py-12 space-y-10">
-
-            <!-- Hero Header Banner -->
-            <section class="glass-panel rounded-3xl p-6 lg:p-10 text-center relative overflow-hidden border border-gold-500/30 shadow-2xl">
-                <div class="absolute -top-24 -left-24 w-60 h-60 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="absolute -bottom-24 -right-24 w-60 h-60 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
-                
-                <div class="inline-flex items-center space-x-2 bg-gold-500/10 border border-gold-500/30 rounded-full px-4 py-1 text-gold-400 text-xs font-mono mb-4">
-                    <i class="fa-solid fa-bullhorn"></i>
-                    <span>ANUNCIO OFICIAL ANEFF™ • PORTAL MANIFIESTO 8/8/2026</span>
-                </div>
-
-                <h1 class="font-cinzel text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gold-gradient mb-6 leading-tight">
-                    🌐 8 / 8 / 2026 — El Espejo del Tiempo, la Creación del Valor y la Arquitectura Supraconsciente de Fraqtum
-                </h1>
-
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto font-light mb-4">
-                    Hay momentos donde la matemática deja de ser un cálculo abstracto para convertirse en el reflejo de la vida misma. Hoy contemplamos el número ocho no solo como la silueta del infinito, sino como la geometría del reloj de arena: la unión perfecta entre el tiempo que pasa y la eternidad que permanece. Desde el origen, la naturaleza respira a través de una armonía inalterable: la proporción áurea y los patrones fractales que regulan el cosmos. Sin embargo, los humanos hemos construido economías frágiles, basadas en deuda y sistemas centralizados donde el valor se diluye y la confianza se rompe. Hoy, desde la <strong class="text-gold-300">Asociación Nacional de Educación Financiera Fractal™</strong>, explicamos cómo se esta gestando el portal para presentarte <strong class="text-gold-400">Fraqtum</strong>: un ecosistema vivo de web 3.0 diseñado bajo las leyes inmutables del universo.
-                </p>
-            </section>
-
-            <!-- Section 1: Hourglass Memory -->
-            <section class="glass-card rounded-2xl p-6 lg:p-8 space-y-4 relative">
-                <div class="flex items-center space-x-3 text-gold-400 font-cinzel text-xl font-bold border-b border-gold-500/20 pb-3">
-                    <div class="w-8 h-8 rounded-lg bg-gold-500/10 flex items-center justify-center border border-gold-500/30 text-gold-400">
-                        ⏳
-                    </div>
-                    <h2>La Memoria que Sana: El Reloj de Arena de Perez</h2>
-                </div>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                    Los sistemas actuales colapsan ante el menor error. Para construir una economía verdaderamente indestructible, integramos el descubrimiento científico de Jean-Claude Perez: el Reloj de Arena Fractal. Este sistema posee un hemisferio de expansión (crecimiento) y un hemisferio de protección (amortiguamiento). En su centro nace la memoria asociativa PHAM. ¿Qué significa esto? Que, por primera vez, si tus registros, fondos o contratos sufren un ataque masivo o una interferencia crítica, la red reconoce su huella armónica y la autorrepara al instante. La verdadera seguridad no levanta muros; diseña estructuras capaces de sanarse a sí mismas.
-                </p>
-            </section>
-
-            <!-- Section 2: Value Creation -->
-            <section class="glass-card rounded-2xl p-6 lg:p-8 space-y-4">
-                <div class="flex items-center space-x-3 text-gold-400 font-cinzel text-xl font-bold border-b border-gold-500/20 pb-3">
-                    <div class="w-8 h-8 rounded-lg bg-gold-500/10 flex items-center justify-center border border-gold-500/30 text-gold-400">
-                        ⚡
-                    </div>
-                    <h2>¿De dónde nace el valor en la Criptoeconomía Áurea?</h2>
-                </div>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                    Muchos dudan del valor digital. Bitcoin nos enseñó que la unión de escasez matemática y energía (Proof of Work) crea un activo incensurable. Fraqtum da el siguiente salto evolutivo. No quemamos energía resolviendo acertijos vacíos, ni dependemos de la especulación. Creamos una antientropía económica respaldada por tres pilares:
-                </p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-                    <div class="bg-obsidian-800/60 p-4 rounded-xl border border-gold-500/20 hover:border-gold-500/40 transition-all">
-                        <div class="text-gold-400 font-bold mb-1 flex items-center space-x-2 text-sm font-mono">
-                            <i class="fa-solid fa-microchip"></i>
-                            <span>Cómputo útil (PoFR)</span>
-                        </div>
-                        <p class="text-xs text-slate-300">Los nodos aportan procesamiento para modelos predictivos de inteligencia artificial financiera.</p>
-                    </div>
-
-                    <div class="bg-obsidian-800/60 p-4 rounded-xl border border-gold-500/20 hover:border-gold-500/40 transition-all">
-                        <div class="text-gold-400 font-bold mb-1 flex items-center space-x-2 text-sm font-mono">
-                            <i class="fa-solid fa-infinity"></i>
-                            <span>Límite armónico (&Phi;)</span>
-                        </div>
-                        <p class="text-xs text-slate-300">Existirán máximo de tokens ($F_{12} = 144,000,000$), eliminando de raíz la hiperinflación.</p>
-                    </div>
-
-                    <div class="bg-obsidian-800/60 p-4 rounded-xl border border-gold-500/20 hover:border-gold-500/40 transition-all">
-                        <div class="text-gold-400 font-bold mb-1 flex items-center space-x-2 text-sm font-mono">
-                            <i class="fa-solid fa-store"></i>
-                            <span>Comercio real (Subwebs)</span>
-                        </div>
-                        <p class="text-xs text-slate-300">Cualquier comercio o escuela puede crear su micro-economía y pasarela de pago en 5 minutos, inyectando liquidez real.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 3: Nodes, Gas, and SBT Passport -->
-            <section class="glass-card rounded-2xl p-6 lg:p-8 space-y-4">
-                <div class="flex items-center space-x-3 text-gold-400 font-cinzel text-xl font-bold border-b border-gold-500/20 pb-3">
-                    <div class="w-8 h-8 rounded-lg bg-gold-500/10 flex items-center justify-center border border-gold-500/30 text-gold-400">
-                        🛡️
-                    </div>
-                    <h2>Nodos, Gas y el Pasaporte de Identidad Soberana (SBT)</h2>
-                </div>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                    En un banco tradicional, tu dinero enriquece a otros. En Fraqtum, al aportar al pool de liquidez, te conviertes en un guardián de la red. A diferencia del viejo modelo, el 100% de las comisiones de red (gas áureo) se reparte éticamente: el nutre la reserva global para proteger el precio, y el premia directamente a la comunidad. Para acceder a este nivel, el usuario debe acuñar su Pasaporte de Identidad Digital Soberana (SBT). ¿Vale la pena el costo de crearlo? Absolutamente. No es un gasto, es un escudo sagrado. Este pasaporte erradica los bots, certifica tu aprendizaje real (Proof of Knowledge) y te otorga el derecho de gobernanza y multiplicadores de rendimiento que un usuario común jamás tendría.
-                </p>
-            </section>
-
-            <!-- Section 4: Fractal Referral Tree -->
-            <section class="glass-card rounded-2xl p-6 lg:p-8 space-y-4">
-                <div class="flex items-center space-x-3 text-gold-400 font-cinzel text-xl font-bold border-b border-gold-500/20 pb-3">
-                    <div class="w-8 h-8 rounded-lg bg-gold-500/10 flex items-center justify-center border border-gold-500/30 text-gold-400">
-                        🌲
-                    </div>
-                    <h2>El Árbol Fractal: Referidos y Abundancia Inmortal</h2>
-                </div>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                    Los esquemas de invitación tradicionales mueren rápido porque la gente extrae sus ganancias y abandona la red. Nuestro modelo es un ecosistema vivo que se autorreplica:
-                </p>
-                
-                <ul class="space-y-3 font-mono text-xs sm:text-sm text-slate-300">
-                    <li class="flex items-start space-x-3 bg-obsidian-800/40 p-3 rounded-lg border border-gold-500/10">
-                        <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
-                        <div>
-                            <strong class="text-gold-300">Puntos de fidelidad con respaldo:</strong>
-                            <span>Las recompensas por invitar a comercios o estudiantes no se entregan para ser drenadas, sino como puntos de fidelidad (sub-tokens) respaldados por la red principal, fomentando su uso dentro de nuestro propio ecosistema comercial y educativo.</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start space-x-3 bg-obsidian-800/40 p-3 rounded-lg border border-gold-500/10">
-                        <i class="fa-solid fa-lock text-gold-400 mt-1"></i>
-                        <div>
-                            <strong class="text-gold-300">Anclaje indestructible:</strong>
-                            <span>Además, el 50% de todo lo generado se auto-bloquea automáticamente en staking. Cada persona que invitas crea un piso de liquidez permanente que hace más sólida tu propia economía.</span>
-                        </div>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Section 5: The 144 Seeders Threshold Concept -->
-            <section id="seeder-section" class="glass-panel rounded-3xl p-6 lg:p-10 border border-gold-500/40 shadow-2xl relative">
-                <div class="border-b border-gold-500/30 pb-4 mb-4">
-                    <div class="flex items-center space-x-3 text-gold-400 font-cinzel text-2xl font-bold">
-                        <span>🔮 El Umbral de los 144 Sembradores</span>
-                    </div>
-                    <p class="text-xs font-mono text-slate-400 mt-1">
-                        Protección Criptográfica Poscuántica (CRYSTALS-Dilithium & Falcon)
-                    </p>
-                </div>
-
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                    Por último, nuestra red está protegida con criptografía poscuántica (Dilithium/Falcon). Tus activos resistirán a los superordenadores del mañana. En la geometría del cosmos, el 144 es la masa crítica de resonancia. Solo requerimos 144 seguidores integrados para activar la red. Al completar este núcleo, liberaremos en exclusiva el enlace de acceso directo al motor 3D de Fraqtum, nuestra academia y los contratos.
-                </p>
-            </section>
-
-            <!-- Closing Reflection Section -->
-            <section class="glass-card rounded-2xl p-6 lg:p-8 text-center space-y-4 border border-gold-500/30">
-                <blockquote class="text-gold-300 font-cinzel text-lg sm:text-xl italic max-w-2xl mx-auto leading-relaxed">
-                    &ldquo;Construir algo eterno exige respeto por los tiempos de maduración. Esta es la semilla. Si sientes el llamado de este portal 8/8 y deseas estar entre los 144 fundadores, déjanos tu señal.&rdquo;
-                </blockquote>
-                <div class="text-xs font-mono text-slate-400">
-                    — Asociación Nacional de Educación Financiera Fractal™
-                </div>
-            </section>
-
-        </main>
-
+<!-- ... existing code ... -->
         <!-- STREAMING_CHUNK:Building Minimal Footer... -->
         <!-- Minimal Footer with Trademark -->
         <footer class="glass-panel border-t border-gold-500/20 py-8 px-4 mt-12 text-center font-mono text-xs text-gold-400">
@@ -298,9 +9,9 @@
 
     </div>
 
-    <!-- STREAMING_CHUNK:Initializing Sacred Geometry Mandala Engine... -->
+    <!-- STREAMING_CHUNK:Initializing Sacred Toroid Geometry Engine... -->
     <script>
-        // Sacred Mandala & Golden Fibonacci Spiral Engine
+        // Sacred Toroid & Golden Fibonacci Spiral Engine
         const canvas = document.getElementById('fractal-canvas');
         const ctx = canvas.getContext('2d');
 
@@ -310,32 +21,69 @@
         window.addEventListener('resize', () => {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
-            initStars();
+            initCosmos();
         });
 
         // Golden Ratio Constant
         const PHI = (1 + Math.sqrt(5)) / 2; // ~1.6180339887
 
-        // Cosmic background starlight dust
+        // Cosmic background elements
         let stars = [];
-        function initStars() {
+        let shootingStars = [];
+        let stardust = [];
+
+        function initCosmos() {
             stars = [];
-            const numStars = Math.floor((width * height) / 3000);
+            stardust = [];
+            shootingStars = [];
+            
+            // Deep background stars
+            const numStars = Math.floor((width * height) / 2500);
             for (let i = 0; i < numStars; i++) {
                 stars.push({
                     x: Math.random() * width,
                     y: Math.random() * height,
-                    size: Math.random() * 1.5 + 0.5,
-                    alpha: Math.random() * 0.7 + 0.1,
-                    speed: Math.random() * 0.01 + 0.003
+                    size: Math.random() * 1.2 + 0.3,
+                    alpha: Math.random() * 0.8 + 0.1,
+                    speed: Math.random() * 0.02 + 0.005,
+                    color: Math.random() > 0.8 ? '#FFD54F' : '#E2E8F0'
+                });
+            }
+
+            // Stardust (glowing ambient particles)
+            const numDust = Math.floor((width * height) / 8000);
+            for (let i = 0; i < numDust; i++) {
+                stardust.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    size: Math.random() * 3 + 1,
+                    alpha: Math.random() * 0.4 + 0.1,
+                    pulseSpeed: Math.random() * 0.03 + 0.01,
+                    phase: Math.random() * Math.PI * 2
                 });
             }
         }
-        initStars();
+        initCosmos();
+
+        function spawnShootingStar() {
+            if (Math.random() > 0.98) {
+                shootingStars.push({
+                    x: Math.random() * width * 1.5,
+                    y: -50,
+                    length: Math.random() * 100 + 50,
+                    speedX: -(Math.random() * 10 + 5),
+                    speedY: Math.random() * 10 + 5,
+                    alpha: 1,
+                    decay: Math.random() * 0.02 + 0.01
+                });
+            }
+        }
 
         let time = 0;
         let mouseX = width / 2;
         let mouseY = height / 2;
+        let targetCx = width / 2;
+        let targetCy = height * 0.48;
 
         window.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
@@ -347,20 +95,38 @@
             ctx.beginPath();
             ctx.moveTo(0, -rInner);
             ctx.bezierCurveTo(
-                petalWidthAngle * rOuter * 1.2, -rInner * 1.1,
-                petalWidthAngle * rOuter * 0.8, -rOuter * 0.9,
+                petalWidthAngle * rOuter * 1.3, -rInner * 1.2,
+                petalWidthAngle * rOuter * 0.9, -rOuter * 0.8,
                 0, -rOuter
             );
             ctx.bezierCurveTo(
-                -petalWidthAngle * rOuter * 0.8, -rOuter * 0.9,
-                -petalWidthAngle * rOuter * 1.2, -rInner * 1.1,
+                -petalWidthAngle * rOuter * 0.9, -rOuter * 0.8,
+                -petalWidthAngle * rOuter * 1.3, -rInner * 1.2,
                 0, -rInner
             );
             ctx.closePath();
         }
 
+        // Helper function to draw a torus-like overlapping weave
+        function drawTorusWeave(ctx, radius, loops, rotationAngle) {
+            ctx.save();
+            ctx.rotate(rotationAngle);
+            ctx.strokeStyle = 'rgba(212, 175, 55, 0.15)';
+            ctx.lineWidth = 1;
+            
+            for (let i = 0; i < loops; i++) {
+                ctx.save();
+                ctx.rotate((Math.PI * 2 / loops) * i);
+                ctx.beginPath();
+                ctx.ellipse(0, -radius * 0.5, radius * 0.2, radius * 0.6, 0, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.restore();
+            }
+            ctx.restore();
+        }
+
         // Helper function to draw sacred geometry mandala ring
-        function drawMandalaRing(ctx, radius, petalCount, rotationAngle, strokeColor, fillColor, glowColor) {
+        function drawMandalaRing(ctx, radius, petalCount, rotationAngle, strokeColor, fillColor, glowColor, intricate = false) {
             ctx.save();
             ctx.rotate(rotationAngle);
             ctx.strokeStyle = strokeColor;
@@ -368,33 +134,40 @@
 
             if (glowColor) {
                 ctx.shadowColor = glowColor;
-                ctx.shadowBlur = 12;
+                ctx.shadowBlur = 15;
             }
 
             for (let i = 0; i < petalCount; i++) {
                 ctx.save();
                 ctx.rotate((Math.PI * 2 / petalCount) * i);
                 
-                // Draw Petal Layer
-                drawMandalaPetal(ctx, radius * 0.7, radius, 0.35);
+                // Main Petal
+                drawMandalaPetal(ctx, radius * 0.6, radius, 0.4);
                 if (fillColor) {
                     ctx.fillStyle = fillColor;
                     ctx.fill();
                 }
                 ctx.stroke();
 
-                // Inner sacred geometry lace
+                if (intricate) {
+                    // Inner intricate petal
+                    drawMandalaPetal(ctx, radius * 0.65, radius * 0.9, 0.2);
+                    ctx.stroke();
+                    
+                    // Sacred point
+                    ctx.beginPath();
+                    ctx.arc(0, -radius * 0.95, 2, 0, Math.PI * 2);
+                    ctx.fillStyle = glowColor;
+                    ctx.fill();
+                }
+
+                // Connecting arches
                 ctx.beginPath();
-                ctx.arc(0, -radius * 0.85, radius * 0.08, 0, Math.PI * 2);
+                ctx.arc(0, 0, radius * 0.75, -Math.PI / petalCount, Math.PI / petalCount);
                 ctx.stroke();
 
                 ctx.restore();
             }
-
-            // Outer boundary ring
-            ctx.beginPath();
-            ctx.arc(0, 0, radius, 0, Math.PI * 2);
-            ctx.stroke();
 
             ctx.restore();
         }
@@ -403,133 +176,182 @@
         function renderScene() {
             time += 0.003;
 
-            // Deep cosmic night background gradient
-            const bgGrad = ctx.createRadialGradient(width / 2, height / 2, 50, width / 2, height / 2, Math.max(width, height) * 0.8);
-            bgGrad.addColorStop(0, '#0E111A');
-            bgGrad.addColorStop(0.5, '#07080D');
+            // Deep cosmic torus background gradient
+            const bgGrad = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, Math.max(width, height) * 0.9);
+            bgGrad.addColorStop(0, '#110F18'); // Slightly purple/deep space core
+            bgGrad.addColorStop(0.4, '#0B0D14');
             bgGrad.addColorStop(1, '#030406');
             ctx.fillStyle = bgGrad;
             ctx.fillRect(0, 0, width, height);
 
-            // Render Cosmic Stars
+            // Render Cosmos
+            // 1. Static Stars
             for (let star of stars) {
-                star.alpha += Math.sin(time * 5 + star.x) * 0.005;
-                const currentAlpha = Math.max(0.1, Math.min(0.8, star.alpha));
-                ctx.fillStyle = `rgba(255, 230, 160, ${currentAlpha})`;
+                star.alpha += Math.sin(time * 5 + star.x) * 0.01;
+                const currentAlpha = Math.max(0.1, Math.min(0.9, star.alpha));
+                ctx.fillStyle = star.color;
+                ctx.globalAlpha = currentAlpha;
                 ctx.beginPath();
                 ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
                 ctx.fill();
             }
+            ctx.globalAlpha = 1.0;
 
-            // Center of Mandala (anchored dynamically, subtly influenced by mouse position)
-            const offsetX = (mouseX - width / 2) * 0.03;
-            const offsetY = (mouseY - height / 2) * 0.03;
-            const cx = width / 2 + offsetX;
-            const cy = height * 0.48 + offsetY;
+            // 2. Glowing Stardust
+            for (let dust of stardust) {
+                const alpha = (Math.sin(time * dust.pulseSpeed + dust.phase) + 1) / 2 * dust.alpha;
+                ctx.fillStyle = `rgba(212, 175, 55, ${alpha})`;
+                ctx.shadowColor = '#FFD54F';
+                ctx.shadowBlur = dust.size * 2;
+                ctx.beginPath();
+                ctx.arc(dust.x, dust.y, dust.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            ctx.shadowBlur = 0;
 
-            const baseRadius = Math.min(width, height) * 0.38;
+            // 3. Shooting Stars
+            spawnShootingStar();
+            for (let i = shootingStars.length - 1; i >= 0; i--) {
+                let ss = shootingStars[i];
+                ss.x += ss.speedX;
+                ss.y += ss.speedY;
+                ss.alpha -= ss.decay;
 
-            ctx.save();
-            ctx.translate(cx, cy);
-
-            // 1. Outer Golden Horizon Aura Ring
-            ctx.beginPath();
-            ctx.arc(0, 0, baseRadius * 1.28, 0, Math.PI * 2);
-            ctx.strokeStyle = 'rgba(212, 175, 55, 0.12)';
-            ctx.lineWidth = 1.5;
-            ctx.stroke();
-
-            // 2. Multi-layered Sacred Mandala Geometry (32, 24, 16, 8 fold symmetry)
-            // Outer Layer (32 petals, counter rotation)
-            drawMandalaRing(
-                ctx, 
-                baseRadius * 1.15, 
-                32, 
-                -time * 0.4, 
-                'rgba(212, 175, 55, 0.22)', 
-                'rgba(212, 175, 55, 0.015)',
-                'rgba(212, 175, 55, 0.3)'
-            );
-
-            // Middle Layer (24 petals, forward rotation)
-            drawMandalaRing(
-                ctx, 
-                baseRadius * 0.88, 
-                24, 
-                time * 0.6, 
-                'rgba(255, 213, 79, 0.35)', 
-                'rgba(212, 175, 55, 0.025)',
-                'rgba(255, 213, 79, 0.4)'
-            );
-
-            // Inner Layer (16 petals, counter rotation)
-            drawMandalaRing(
-                ctx, 
-                baseRadius * 0.62, 
-                16, 
-                -time * 0.8, 
-                'rgba(255, 230, 130, 0.45)', 
-                'rgba(255, 213, 79, 0.04)',
-                'rgba(255, 215, 0, 0.5)'
-            );
-
-            // Core Layer (8 petals, fast subtle pulse)
-            const pulse = Math.sin(time * 2) * 0.05 + 1.0;
-            drawMandalaRing(
-                ctx, 
-                baseRadius * 0.38 * pulse, 
-                8, 
-                time * 1.2, 
-                'rgba(255, 249, 230, 0.6)', 
-                'rgba(212, 175, 55, 0.08)',
-                'rgba(255, 249, 230, 0.7)'
-            );
-
-            // 3. Central Golden Fibonacci Spiral (&Phi;)
-            ctx.save();
-            ctx.rotate(time * 0.5);
-            ctx.beginPath();
-            const spiralTurns = 12 * Math.PI;
-            const a = baseRadius * 0.008;
-            const b = 0.15; // logarithmic growth factor
-
-            for (let theta = 0; theta < spiralTurns; theta += 0.05) {
-                const r = a * Math.exp(b * theta);
-                if (r > baseRadius * 1.2) break;
-
-                const x = r * Math.cos(theta);
-                const y = r * Math.sin(theta);
-
-                if (theta === 0) {
-                    ctx.moveTo(x, y);
-                } else {
-                    ctx.lineTo(x, y);
+                if (ss.alpha <= 0) {
+                    shootingStars.splice(i, 1);
+                    continue;
                 }
+
+                const grad = ctx.createLinearGradient(ss.x, ss.y, ss.x - ss.speedX * 4, ss.y - ss.speedY * 4);
+                grad.addColorStop(0, `rgba(255, 255, 255, ${ss.alpha})`);
+                grad.addColorStop(1, `rgba(212, 175, 55, 0)`);
+
+                ctx.strokeStyle = grad;
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.moveTo(ss.x, ss.y);
+                ctx.lineTo(ss.x - ss.speedX * 4, ss.y - ss.speedY * 4);
+                ctx.stroke();
             }
 
-            ctx.strokeStyle = 'rgba(255, 220, 100, 0.75)';
-            ctx.lineWidth = 2;
-            ctx.shadowColor = '#FFD54F';
-            ctx.shadowBlur = 18;
-            ctx.stroke();
+            // Smooth parallax interaction
+            const destCx = width / 2 + (mouseX - width / 2) * 0.04;
+            const destCy = height * 0.48 + (mouseY - height / 2) * 0.04;
+            targetCx += (destCx - targetCx) * 0.05;
+            targetCy += (destCy - targetCy) * 0.05;
+
+            const baseRadius = Math.min(width, height) * 0.42;
+
+            ctx.save();
+            ctx.translate(targetCx, targetCy);
+
+            // Torus / Mandala Breathing effect
+            const breath = Math.sin(time * 1.5) * 0.03 + 1;
+
+            // 1. Deep Torus Weave (Background structure)
+            drawTorusWeave(ctx, baseRadius * 1.3, 48, time * 0.1);
+            drawTorusWeave(ctx, baseRadius * 1.1, 36, -time * 0.15);
+
+            // 2. Multi-layered Sacred Toroidal Mandala (48, 32, 24, 12, 8)
+            // Outer Toroidal Layer
+            drawMandalaRing(
+                ctx, 
+                baseRadius * 1.1 * breath, 
+                48, 
+                time * 0.2, 
+                'rgba(212, 175, 55, 0.15)', 
+                'rgba(212, 175, 55, 0.01)',
+                'rgba(212, 175, 55, 0.2)'
+            );
+
+            // Mid-Outer Layer (Intricate)
+            drawMandalaRing(
+                ctx, 
+                baseRadius * 0.85, 
+                32, 
+                -time * 0.3, 
+                'rgba(255, 213, 79, 0.25)', 
+                'rgba(212, 175, 55, 0.02)',
+                'rgba(255, 213, 79, 0.3)',
+                true
+            );
+
+            // Middle Layer
+            drawMandalaRing(
+                ctx, 
+                baseRadius * 0.6, 
+                24, 
+                time * 0.5, 
+                'rgba(255, 230, 130, 0.4)', 
+                'rgba(255, 213, 79, 0.03)',
+                'rgba(255, 215, 0, 0.4)'
+            );
+
+            // Inner Star Layer
+            drawMandalaRing(
+                ctx, 
+                baseRadius * 0.35 * breath, 
+                12, 
+                -time * 0.8, 
+                'rgba(255, 249, 230, 0.6)', 
+                'rgba(212, 175, 55, 0.05)',
+                'rgba(255, 249, 230, 0.6)',
+                true
+            );
+
+            // 3. Central Golden Toroidal Spiral
+            ctx.save();
+            ctx.rotate(time * 0.8);
+            ctx.beginPath();
+            const spiralTurns = 16 * Math.PI;
+            const a = baseRadius * 0.005;
+            const b = 0.12; 
+
+            // Dual interwoven spirals for torus feel
+            for (let i = 0; i < 2; i++) {
+                ctx.rotate(Math.PI); // offset second spiral
+                ctx.beginPath();
+                for (let theta = 0; theta < spiralTurns; theta += 0.05) {
+                    const r = a * Math.exp(b * theta);
+                    if (r > baseRadius * 0.8) break;
+
+                    const x = r * Math.cos(theta);
+                    const y = r * Math.sin(theta);
+
+                    if (theta === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                }
+                ctx.strokeStyle = i === 0 ? 'rgba(255, 230, 130, 0.8)' : 'rgba(255, 213, 79, 0.5)';
+                ctx.lineWidth = 2.5;
+                ctx.shadowColor = '#FFD54F';
+                ctx.shadowBlur = 20;
+                ctx.stroke();
+            }
             ctx.restore();
 
-            // 4. Center Golden Sun Core
-            const coreGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, baseRadius * 0.22);
-            coreGrad.addColorStop(0, 'rgba(255, 249, 230, 0.9)');
-            coreGrad.addColorStop(0.3, 'rgba(255, 213, 79, 0.5)');
-            coreGrad.addColorStop(0.7, 'rgba(212, 175, 55, 0.15)');
+            // 4. Luminous Cosmic Core
+            const coreGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, baseRadius * 0.25);
+            coreGrad.addColorStop(0, 'rgba(255, 255, 255, 0.95)');
+            coreGrad.addColorStop(0.1, 'rgba(255, 249, 230, 0.8)');
+            coreGrad.addColorStop(0.4, 'rgba(255, 213, 79, 0.4)');
+            coreGrad.addColorStop(0.8, 'rgba(212, 175, 55, 0.1)');
             coreGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
             ctx.fillStyle = coreGrad;
             ctx.beginPath();
-            ctx.arc(0, 0, baseRadius * 0.22, 0, Math.PI * 2);
+            ctx.arc(0, 0, baseRadius * 0.25, 0, Math.PI * 2);
             ctx.fill();
 
-            // Center point
-            ctx.fillStyle = '#FFF9E6';
+            // Core singularity point
+            const singularityPulse = Math.sin(time * 5) * 2 + 3;
+            ctx.fillStyle = '#FFFFFF';
+            ctx.shadowColor = '#FFFFFF';
+            ctx.shadowBlur = 10;
             ctx.beginPath();
-            ctx.arc(0, 0, 3, 0, Math.PI * 2);
+            ctx.arc(0, 0, singularityPulse, 0, Math.PI * 2);
             ctx.fill();
 
             ctx.restore();
@@ -544,3 +366,4 @@
     </script>
 </body>
 </html>
+```eof
