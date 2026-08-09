@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Fira+Code:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- STREAMING_CHUNK:Configuring Tailwind CSS theme... -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -43,6 +44,8 @@
             }
         }
     </script>
+    
+    <!-- STREAMING_CHUNK:Styling page layout and glassmorphism... -->
     <style>
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
@@ -62,22 +65,23 @@
 
         /* Glassmorphism Styles */
         .glass-panel {
-            background: rgba(14, 17, 24, 0.72);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+            background: rgba(10, 13, 20, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.8);
         }
         
         .glass-card {
-            background: rgba(22, 27, 38, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.15);
+            background: rgba(18, 22, 32, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             transition: all 0.3s ease;
         }
         .glass-card:hover {
-            border-color: rgba(212, 175, 55, 0.5);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.55);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
             transform: translateY(-2px);
         }
 
@@ -90,14 +94,14 @@
 
         /* Shimmer Animation */
         @keyframes goldenGlow {
-            0%, 100% { opacity: 0.4; filter: drop-shadow(0 0 15px rgba(212,175,55,0.4)); }
-            50% { opacity: 0.9; filter: drop-shadow(0 0 30px rgba(212,175,55,0.8)); }
+            0%, 100% { opacity: 0.5; filter: drop-shadow(0 0 15px rgba(212,175,55,0.4)); }
+            50% { opacity: 0.95; filter: drop-shadow(0 0 35px rgba(212,175,55,0.85)); }
         }
         .animate-golden-glow {
             animation: goldenGlow 4s infinite ease-in-out;
         }
 
-        /* Background Canvas */
+        /* Interactive Canvas Background */
         #fractal-canvas {
             position: fixed;
             top: 0;
@@ -111,12 +115,14 @@
 </head>
 <body class="bg-obsidian-900 text-slate-200 font-inter min-h-screen relative overflow-x-hidden selection:bg-gold-500 selection:text-obsidian-900">
 
-    <!-- Interactive WebGL/Canvas Fractal Background -->
+    <!-- STREAMING_CHUNK:Rendering Canvas Background Element... -->
+    <!-- Interactive WebGL/Canvas Sacred Mandala & Golden Spiral Background -->
     <canvas id="fractal-canvas"></canvas>
 
     <!-- UI Overlay Wrapper -->
     <div class="relative z-10 min-h-screen flex flex-col justify-between">
 
+        <!-- STREAMING_CHUNK:Building Header Bar... -->
         <!-- Navigation / Header Bar -->
         <header class="sticky top-0 z-50 glass-panel border-b border-gold-500/20 px-4 lg:px-8 py-4">
             <div class="max-w-7xl mx-auto flex items-center justify-between">
@@ -136,6 +142,7 @@
             </div>
         </header>
 
+        <!-- STREAMING_CHUNK:Building Main Manifesto Content... -->
         <!-- Main Content Wrapper -->
         <main class="max-w-5xl mx-auto px-4 py-8 lg:py-12 space-y-10">
 
@@ -167,7 +174,7 @@
                     <h2>La Memoria que Sana: El Reloj de Arena de Perez</h2>
                 </div>
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                    Los sistemas actuales colapsan ante el menor error. Para construir una economía verdaderamente indestructible, integramos el descubrimiento científico de Jean-Claude Perez: el Reloj de Arena Fractal. Este sistema posee un hemisferio de expansión (crecimiento) y un hemisferio de protección (amortiguamiento). En su centro nace la memoria asociativa PHAM. ¿Qué significa esto? Que, por primera vez, si tus registros, fondos o contratos sufren un ataque masivo o una interferencia crítica, la red reconoce su huella armónica y la autorrepara al instante. La verdadera seguridad no levanta muros; diseña structures capaces de sanarse a sí mismas.
+                    Los sistemas actuales colapsan ante el menor error. Para construir una economía verdaderamente indestructible, integramos el descubrimiento científico de Jean-Claude Perez: el Reloj de Arena Fractal. Este sistema posee un hemisferio de expansión (crecimiento) y un hemisferio de protección (amortiguamiento). En su centro nace la memoria asociativa PHAM. ¿Qué significa esto? Que, por primera vez, si tus registros, fondos o contratos sufren un ataque masivo o una interferencia crítica, la red reconoce su huella armónica y la autorrepara al instante. La verdadera seguridad no levanta muros; diseña estructuras capaces de sanarse a sí mismas.
                 </p>
             </section>
 
@@ -281,6 +288,7 @@
 
         </main>
 
+        <!-- STREAMING_CHUNK:Building Minimal Footer... -->
         <!-- Minimal Footer with Trademark -->
         <footer class="glass-panel border-t border-gold-500/20 py-8 px-4 mt-12 text-center font-mono text-xs text-gold-400">
             <div class="font-bold text-sm tracking-wide">
@@ -290,8 +298,9 @@
 
     </div>
 
+    <!-- STREAMING_CHUNK:Initializing Sacred Geometry Mandala Engine... -->
     <script>
-        // Canvas Fractal Generator (Perez Hourglass & Golden Spiral 2D Simulation)
+        // Sacred Mandala & Golden Fibonacci Spiral Engine
         const canvas = document.getElementById('fractal-canvas');
         const ctx = canvas.getContext('2d');
 
@@ -301,16 +310,30 @@
         window.addEventListener('resize', () => {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
+            initStars();
         });
 
-        const config = {
-            iterations: 8,
-            speed: 1.0,
-            zoom: 1.618,
-            palette: 'gold',
-            time: 0
-        };
+        // Golden Ratio Constant
+        const PHI = (1 + Math.sqrt(5)) / 2; // ~1.6180339887
 
+        // Cosmic background starlight dust
+        let stars = [];
+        function initStars() {
+            stars = [];
+            const numStars = Math.floor((width * height) / 3000);
+            for (let i = 0; i < numStars; i++) {
+                stars.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    size: Math.random() * 1.5 + 0.5,
+                    alpha: Math.random() * 0.7 + 0.1,
+                    speed: Math.random() * 0.01 + 0.003
+                });
+            }
+        }
+        initStars();
+
+        let time = 0;
         let mouseX = width / 2;
         let mouseY = height / 2;
 
@@ -319,70 +342,205 @@
             mouseY = e.clientY;
         });
 
-        function drawFractal() {
-            ctx.fillStyle = '#07080B';
+        // Helper function to draw a delicate Golden Mandala Petal
+        function drawMandalaPetal(ctx, rInner, rOuter, petalWidthAngle) {
+            ctx.beginPath();
+            ctx.moveTo(0, -rInner);
+            ctx.bezierCurveTo(
+                petalWidthAngle * rOuter * 1.2, -rInner * 1.1,
+                petalWidthAngle * rOuter * 0.8, -rOuter * 0.9,
+                0, -rOuter
+            );
+            ctx.bezierCurveTo(
+                -petalWidthAngle * rOuter * 0.8, -rOuter * 0.9,
+                -petalWidthAngle * rOuter * 1.2, -rInner * 1.1,
+                0, -rInner
+            );
+            ctx.closePath();
+        }
+
+        // Helper function to draw sacred geometry mandala ring
+        function drawMandalaRing(ctx, radius, petalCount, rotationAngle, strokeColor, fillColor, glowColor) {
+            ctx.save();
+            ctx.rotate(rotationAngle);
+            ctx.strokeStyle = strokeColor;
+            ctx.lineWidth = 1;
+
+            if (glowColor) {
+                ctx.shadowColor = glowColor;
+                ctx.shadowBlur = 12;
+            }
+
+            for (let i = 0; i < petalCount; i++) {
+                ctx.save();
+                ctx.rotate((Math.PI * 2 / petalCount) * i);
+                
+                // Draw Petal Layer
+                drawMandalaPetal(ctx, radius * 0.7, radius, 0.35);
+                if (fillColor) {
+                    ctx.fillStyle = fillColor;
+                    ctx.fill();
+                }
+                ctx.stroke();
+
+                // Inner sacred geometry lace
+                ctx.beginPath();
+                ctx.arc(0, -radius * 0.85, radius * 0.08, 0, Math.PI * 2);
+                ctx.stroke();
+
+                ctx.restore();
+            }
+
+            // Outer boundary ring
+            ctx.beginPath();
+            ctx.arc(0, 0, radius, 0, Math.PI * 2);
+            ctx.stroke();
+
+            ctx.restore();
+        }
+
+        /* STREAMING_CHUNK:Rendering Frame Animation Loop... */
+        function renderScene() {
+            time += 0.003;
+
+            // Deep cosmic night background gradient
+            const bgGrad = ctx.createRadialGradient(width / 2, height / 2, 50, width / 2, height / 2, Math.max(width, height) * 0.8);
+            bgGrad.addColorStop(0, '#0E111A');
+            bgGrad.addColorStop(0.5, '#07080D');
+            bgGrad.addColorStop(1, '#030406');
+            ctx.fillStyle = bgGrad;
             ctx.fillRect(0, 0, width, height);
 
-            const cx = width / 2;
-            const cy = height / 2;
-            const phi = 1.6180339887;
+            // Render Cosmic Stars
+            for (let star of stars) {
+                star.alpha += Math.sin(time * 5 + star.x) * 0.005;
+                const currentAlpha = Math.max(0.1, Math.min(0.8, star.alpha));
+                ctx.fillStyle = `rgba(255, 230, 160, ${currentAlpha})`;
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
 
-            config.time += 0.005 * config.speed;
+            // Center of Mandala (anchored dynamically, subtly influenced by mouse position)
+            const offsetX = (mouseX - width / 2) * 0.03;
+            const offsetY = (mouseY - height / 2) * 0.03;
+            const cx = width / 2 + offsetX;
+            const cy = height * 0.48 + offsetY;
+
+            const baseRadius = Math.min(width, height) * 0.38;
 
             ctx.save();
             ctx.translate(cx, cy);
 
-            const numNodes = config.iterations * 16;
-            const maxRadius = Math.min(width, height) * 0.4 * config.zoom;
-
-            for (let i = 0; i < numNodes; i++) {
-                const angle = i * phi * Math.PI * 2 + config.time;
-                const r = Math.sqrt(i / numNodes) * maxRadius;
-
-                const x = r * Math.cos(angle);
-                const y = r * Math.sin(angle) * Math.cos(angle * 0.5);
-
-                const dx = (mouseX - cx) * 0.05 * (r / maxRadius);
-                const dy = (mouseY - cy) * 0.05 * (r / maxRadius);
-
-                const finalX = x + dx;
-                const finalY = y + dy;
-
-                const alpha = 0.15 + 0.35 * Math.sin(i * 0.1 + config.time * 2);
-                const color = `rgba(212, 175, 55, ${alpha})`;
-
-                ctx.beginPath();
-                ctx.arc(finalX, finalY, Math.max(1, 3 * (1 - r / maxRadius)), 0, Math.PI * 2);
-                ctx.fillStyle = color;
-                ctx.fill();
-
-                if (i % 3 === 0 && i > 0) {
-                    const prevAngle = (i - 1) * phi * Math.PI * 2 + config.time;
-                    const prevR = Math.sqrt((i - 1) / numNodes) * maxRadius;
-                    const px = prevR * Math.cos(prevAngle) + dx;
-                    const py = prevR * Math.sin(prevAngle) * Math.cos(prevAngle * 0.5) + dy;
-
-                    ctx.beginPath();
-                    ctx.moveTo(finalX, finalY);
-                    ctx.lineTo(px, py);
-                    ctx.strokeStyle = color;
-                    ctx.lineWidth = 0.5;
-                    ctx.stroke();
-                }
-            }
-
+            // 1. Outer Golden Horizon Aura Ring
             ctx.beginPath();
-            ctx.ellipse(0, 0, 40 * config.zoom, 15 * config.zoom, config.time, 0, Math.PI * 2);
-            ctx.strokeStyle = 'rgba(255, 215, 0, 0.4)';
+            ctx.arc(0, 0, baseRadius * 1.28, 0, Math.PI * 2);
+            ctx.strokeStyle = 'rgba(212, 175, 55, 0.12)';
             ctx.lineWidth = 1.5;
             ctx.stroke();
 
+            // 2. Multi-layered Sacred Mandala Geometry (32, 24, 16, 8 fold symmetry)
+            // Outer Layer (32 petals, counter rotation)
+            drawMandalaRing(
+                ctx, 
+                baseRadius * 1.15, 
+                32, 
+                -time * 0.4, 
+                'rgba(212, 175, 55, 0.22)', 
+                'rgba(212, 175, 55, 0.015)',
+                'rgba(212, 175, 55, 0.3)'
+            );
+
+            // Middle Layer (24 petals, forward rotation)
+            drawMandalaRing(
+                ctx, 
+                baseRadius * 0.88, 
+                24, 
+                time * 0.6, 
+                'rgba(255, 213, 79, 0.35)', 
+                'rgba(212, 175, 55, 0.025)',
+                'rgba(255, 213, 79, 0.4)'
+            );
+
+            // Inner Layer (16 petals, counter rotation)
+            drawMandalaRing(
+                ctx, 
+                baseRadius * 0.62, 
+                16, 
+                -time * 0.8, 
+                'rgba(255, 230, 130, 0.45)', 
+                'rgba(255, 213, 79, 0.04)',
+                'rgba(255, 215, 0, 0.5)'
+            );
+
+            // Core Layer (8 petals, fast subtle pulse)
+            const pulse = Math.sin(time * 2) * 0.05 + 1.0;
+            drawMandalaRing(
+                ctx, 
+                baseRadius * 0.38 * pulse, 
+                8, 
+                time * 1.2, 
+                'rgba(255, 249, 230, 0.6)', 
+                'rgba(212, 175, 55, 0.08)',
+                'rgba(255, 249, 230, 0.7)'
+            );
+
+            // 3. Central Golden Fibonacci Spiral (&Phi;)
+            ctx.save();
+            ctx.rotate(time * 0.5);
+            ctx.beginPath();
+            const spiralTurns = 12 * Math.PI;
+            const a = baseRadius * 0.008;
+            const b = 0.15; // logarithmic growth factor
+
+            for (let theta = 0; theta < spiralTurns; theta += 0.05) {
+                const r = a * Math.exp(b * theta);
+                if (r > baseRadius * 1.2) break;
+
+                const x = r * Math.cos(theta);
+                const y = r * Math.sin(theta);
+
+                if (theta === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+
+            ctx.strokeStyle = 'rgba(255, 220, 100, 0.75)';
+            ctx.lineWidth = 2;
+            ctx.shadowColor = '#FFD54F';
+            ctx.shadowBlur = 18;
+            ctx.stroke();
             ctx.restore();
 
-            requestAnimationFrame(drawFractal);
+            // 4. Center Golden Sun Core
+            const coreGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, baseRadius * 0.22);
+            coreGrad.addColorStop(0, 'rgba(255, 249, 230, 0.9)');
+            coreGrad.addColorStop(0.3, 'rgba(255, 213, 79, 0.5)');
+            coreGrad.addColorStop(0.7, 'rgba(212, 175, 55, 0.15)');
+            coreGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+            ctx.fillStyle = coreGrad;
+            ctx.beginPath();
+            ctx.arc(0, 0, baseRadius * 0.22, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Center point
+            ctx.fillStyle = '#FFF9E6';
+            ctx.beginPath();
+            ctx.arc(0, 0, 3, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.restore();
+
+            requestAnimationFrame(renderScene);
         }
 
-        drawFractal();
+        // Start animation after DOM load
+        window.onload = function() {
+            renderScene();
+        };
     </script>
 </body>
 </html>
