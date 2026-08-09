@@ -107,16 +107,6 @@
             z-index: 0;
             pointer-events: none;
         }
-
-        /* Audio Visualizer Pulse */
-        @keyframes pulseRing {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0.8; }
-        }
-        .pulse-ring {
-            animation: pulseRing 3s infinite ease-in-out;
-        }
     </style>
 </head>
 <body class="bg-obsidian-900 text-slate-200 font-inter min-h-screen relative overflow-x-hidden selection:bg-gold-500 selection:text-obsidian-900">
@@ -130,25 +120,15 @@
         <!-- Navigation / Header Bar -->
         <header class="sticky top-0 z-50 glass-panel border-b border-gold-500/20 px-4 lg:px-8 py-3">
             <div class="max-w-7xl mx-auto flex items-center justify-between">
-                <!-- Brand Logo -->
+                <!-- Slogan Image in Top Left Corner -->
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 via-gold-500 to-gold-700 flex items-center justify-center text-obsidian-900 font-bold shadow-lg shadow-gold-500/20 animate-golden-glow">
-                        <i class="fa-solid fa-hourglass-half text-lg"></i>
-                    </div>
-                    <div>
-                        <div class="font-cinzel font-bold text-lg text-gold-gradient tracking-wider">FRAQTUM</div>
-                        <div class="text-[10px] font-mono text-gold-400/80 tracking-widest uppercase">ANEFF Web3.0 • Portal 8/8/2026</div>
-                    </div>
+                    <img src="Messenger_creation_193DEA5B-9CD6-4634-8DB4-F715FFF921EA.jpeg" 
+                         alt="Eslogan ANEFF FRAQTUM" 
+                         class="h-12 sm:h-14 w-auto rounded-xl border border-gold-500/30 shadow-lg object-contain bg-obsidian-800"
+                         onerror="this.onerror=null; this.src='https://placehold.co/180x60/0E1118/FFD54F?text=ANEFF+FRAQTUM';">
                 </div>
 
-                <!-- Central Portal Badge -->
-                <div class="hidden md:flex items-center space-x-2 bg-obsidian-800/80 px-4 py-1.5 rounded-full border border-gold-500/30 text-xs font-mono">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                    <span class="text-slate-300">ESTADO DEL PORTAL:</span>
-                    <span class="text-gold-400 font-bold">8 / 8 / 2026 ACTIVO</span>
-                </div>
-
-                <!-- Action Controls -->
+                <!-- Minimal Action Controls -->
                 <div class="flex items-center space-x-2 sm:space-x-3">
                     <!-- Audio Frequency Generator Toggle -->
                     <button id="audio-toggle-btn" class="px-3 py-1.5 rounded-lg bg-obsidian-800 hover:bg-obsidian-700 border border-gold-500/30 text-gold-400 text-xs font-mono flex items-center space-x-2 transition-all">
@@ -158,7 +138,7 @@
 
                     <!-- Fractal Config Button -->
                     <button id="fractal-control-btn" class="p-2 rounded-lg bg-obsidian-800 hover:bg-obsidian-700 border border-gold-500/30 text-gold-400 text-xs transition-all" title="Ajustar Fractal">
-                        <i class="fa-solid fa-[#000] fa-sliders"></i>
+                        <i class="fa-solid fa-sliders"></i>
                     </button>
 
                     <!-- GitHub Exporter Button -->
@@ -223,8 +203,8 @@
                 <div class="absolute -bottom-24 -right-24 w-60 h-60 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
                 
                 <div class="inline-flex items-center space-x-2 bg-gold-500/10 border border-gold-500/30 rounded-full px-4 py-1 text-gold-400 text-xs font-mono mb-4">
-                    <i class="fa-solid fa-certificate"></i>
-                    <span>MANIFIESTO OFICIAL ANEFF • DISTRIBUCIÓN P2P DE REPOSITORIO</span>
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <span>ANUNCIO OFICIAL ANEFF • PORTAL MANIFIESTO 8/8/2026</span>
                 </div>
 
                 <h1 class="font-cinzel text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gold-gradient mb-6 leading-tight">
@@ -420,10 +400,15 @@
 
         </main>
 
-        <!-- Footer -->
-        <footer class="glass-panel border-t border-gold-500/20 py-6 px-4 mt-12 text-center font-mono text-xs text-slate-400 space-y-2">
-            <div>&copy; 2026 FRAQTUM • ANEFF. Criptografía Poscuántica y Red Fractal.</div>
-            <div class="text-gold-400/80">Código Abierto para Despliegue en GitHub Pages & Web3 DApps</div>
+        <!-- Footer with Reclamación de Derechos -->
+        <footer class="glass-panel border-t border-gold-500/20 py-6 px-4 mt-12 text-center font-mono text-xs text-slate-300 space-y-2">
+            <div class="text-gold-400 font-bold flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>Aviso Oficial de Reclamación de Derechos de Autor e Identidad Intelectual</span>
+            </div>
+            <p class="text-slate-400 max-w-3xl mx-auto leading-relaxed text-[11px]">
+                ⚖️ <strong>Reclamación de Derechos Reservados:</strong> ANEFF &bull; FRAQTUM 2026. Se reserva la propiedad intelectual, derechos morales, arquitectura conceptual y modelos criptográficos derivados del Reloj de Arena de Perez y la Memoria PHAM. Queda expresamente reservado el derecho de uso legítimo para la comunidad ANEFF y su red fractal descentralizada.
+            </p>
         </footer>
 
     </div>
