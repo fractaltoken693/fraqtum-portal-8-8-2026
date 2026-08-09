@@ -16,7 +16,15 @@
     <!-- KaTeX for LaTeX Math Rendering -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\(', right: '\\)', display: false},
+            {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+    });"></script>
 
     <script>
         tailwind.config = {
@@ -241,7 +249,7 @@
                     <div class="bg-obsidian-800/40 p-4 rounded-xl border border-gold-500/20 flex flex-col md:flex-row md:items-center gap-3">
                         <span class="text-gold-400 font-bold border border-gold-500/30 px-3 py-1 rounded-lg bg-gold-500/10 shrink-0">2. 2008</span>
                         <div class="text-slate-300">
-                            <strong class="text-gold-300">Satoshi Nakamoto:</strong> Combinó el sellado de Haber y Stornetta con la teoría de juegos y el consumo de energía (Proof of Work) para crear la escasez digital bidimensional (2D) de Bitcoin ($21,000,000\text{ BTC}$).
+                            <strong class="text-gold-300">Satoshi Nakamoto:</strong> Combinó el sellado de Haber y Stornetta con la teoría de juegos y el consumo de energía (Proof of Work) para crear la escasez digital bidimensional (2D) de Bitcoin ($21{,}000{,}000 \text{ BTC}$).
                         </div>
                     </div>
 
@@ -281,7 +289,7 @@
                             <span>Límite Armónico ($F_{12}$)</span>
                         </div>
                         <p class="text-xs text-slate-300">
-                            Suministro strictly acotado por el $12^\circ$ término de la secuencia de Fibonacci ($F_{12} = 144,000,000\text{ EDUFT}$), erradicando la inflación desde la raíz matemática.
+                            Suministro estrictamente acotado por el $12^{\circ}$ término de la secuencia de Fibonacci ($F_{12} = 144{,}000{,}000 \text{ EDUFT}$), erradicando la inflación desde la raíz matemática.
                         </p>
                     </div>
 
@@ -360,7 +368,7 @@
                 </div>
 
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                    Para consolidar la soberanía financiera y garantizar la circulación ininterrumpida de valor en el protocolo FRAQTUM, el repositorio despliega tres pilares fundamentales de finanzas descentralizadas (DeFi) integrados directamente en el contrato inteligente principal:
+                    Para consolidar la soberanía financiera y garantizar la circulación ininterrumpida de valor en el protocolo FRAQTUM, la plataforma integra tres pilares fundamentales de finanzas descentralizadas diseñados de forma intuitiva y accesible para todos los usuarios:
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -372,16 +380,13 @@
                                     <i class="fa-solid fa-right-left"></i>
                                     <span>1. Swap Áureo</span>
                                 </div>
-                                <span class="text-[10px] bg-gold-500/20 text-gold-300 px-2 py-0.5 rounded font-mono">DEX AMM</span>
+                                <span class="text-[10px] bg-gold-500/20 text-gold-300 px-2 py-0.5 rounded font-mono">Intercambio Directo</span>
                             </div>
                             <p class="text-xs text-slate-300 leading-relaxed">
-                                Intercambio descentralizado entre <code class="text-gold-300 font-mono">EDUFT</code> y tokens emparejados (USDT, ETH, BTC) sin intermediarios. Opera bajo la fórmula invariante de producto constante:
+                                Permite cambiar activos digitales de forma instantánea y fluida entre usuarios sin la intervención de bancos o intermediarios centralizados.
                             </p>
-                            <div class="bg-obsidian-900/80 p-2 rounded text-center text-xs font-mono text-gold-400 border border-gold-500/20">
-                                $$x \cdot y = k$$
-                            </div>
-                            <p class="text-[11px] text-slate-400">
-                                Cada transacción aplica la tasa fija del Gas Áureo ($6.18\%$), reinyectando valor constante al cofre colectivo sin deslizamiento destructivo.
+                            <p class="text-[11px] text-slate-400 border-t border-gold-500/10 pt-2">
+                                Cada intercambio fortalece la reserva común de la comunidad, asegurando un mercado justo, transparente y protegido contra la manipulación.
                             </p>
                         </div>
                     </div>
@@ -394,16 +399,13 @@
                                     <i class="fa-solid fa-water"></i>
                                     <span>2. Pool de Liquidez</span>
                                 </div>
-                                <span class="text-[10px] bg-gold-500/20 text-gold-300 px-2 py-0.5 rounded font-mono">LP Yield</span>
+                                <span class="text-[10px] bg-gold-500/20 text-gold-300 px-2 py-0.5 rounded font-mono">Fondo Común</span>
                             </div>
                             <p class="text-xs text-slate-300 leading-relaxed">
-                                Reserva comunitaria descentralizada. Al aportar pares de activos a la Pool Armónica, el participante recibe tokens de proveedor de liquidez (<code class="text-gold-300 font-mono">FLP-Tokens</code>).
+                                Es el fondo colectivo que hace posibles todos los intercambios. Al aportar valor a esta reserva, te conviertes en copropietario del flujo del sistema.
                             </p>
-                            <div class="bg-obsidian-900/80 p-2 rounded text-center text-xs font-mono text-gold-400 border border-gold-500/20">
-                                $$\text{Retorno LP} = 61.8\% \text{ del Gas Áureo}$$
-                            </div>
-                            <p class="text-[11px] text-slate-400">
-                                El $61.8\%$ del acumulado de comisiones globales alimenta este fondo, protegiendo a los LPs contra la pérdida impermanente mediante la amortiguación del Hemisferio Sur.
+                            <p class="text-[11px] text-slate-400 border-t border-gold-500/10 pt-2">
+                                Como compensación por respaldar el mercado, recibes una porción justa de la actividad económica global generada en la red.
                             </p>
                         </div>
                     </div>
@@ -414,32 +416,17 @@
                             <div class="flex items-center justify-between">
                                 <div class="text-gold-400 font-bold text-sm font-mono flex items-center space-x-2">
                                     <i class="fa-solid fa-vault"></i>
-                                    <span>3. Staking Antientrópico</span>
+                                    <span>3. Staking Áureo</span>
                                 </div>
-                                <span class="text-[10px] bg-gold-500/20 text-gold-300 px-2 py-0.5 rounded font-mono">Bloqueo Áureo</span>
+                                <span class="text-[10px] bg-gold-500/20 text-gold-300 px-2 py-0.5 rounded font-mono">Resguardo Fructífero</span>
                             </div>
                             <p class="text-xs text-slate-300 leading-relaxed">
-                                Mecanismo de congelamiento armónico de tokens $EDUFT$ por períodos estructurados basados en la serie de Fibonacci ($8, 21, 34, 89, 144$ días).
+                                Permite depositar tus activos durante periodos de tiempo a tu elección para consolidar la fortaleza económica del protocolo.
                             </p>
-                            <div class="bg-obsidian-900/80 p-2 rounded text-center text-xs font-mono text-gold-400 border border-gold-500/20">
-                                $$\text{APR} = \Phi^n \times \text{Multiplicador SBT}$$
-                            </div>
-                            <p class="text-[11px] text-slate-400">
-                                Al reducir voluntariamente la oferta circulante, el staker incrementa su peso reputacional en la red y desbloquea comisiones pasivas de la reserva del $38.2\%$ asignada a validadores.
+                            <p class="text-[11px] text-slate-400 border-t border-gold-500/10 pt-2">
+                                Al demostrar tu compromiso a largo plazo, obtienes recompensas periódicas y mayor peso de votación en las decisiones de la comunidad.
                             </p>
                         </div>
-                    </div>
-                </div>
-
-                <div class="bg-gold-500/10 border border-gold-500/30 rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <div class="text-xs text-slate-200 leading-relaxed space-y-1">
-                        <div class="font-bold text-gold-300 font-mono flex items-center space-x-2">
-                            <i class="fa-solid fa-code font-mono"></i>
-                            <span>Interoperabilidad DeFi del Contrato Inteligente</span>
-                        </div>
-                        <p class="text-slate-300">
-                            Las funciones <code class="text-gold-400">swapTokens()</code>, <code class="text-gold-400">addLiquidity()</code> y <code class="text-gold-400">stakeEDUFT()</code> están integradas en la matriz ejecutable de Web3 con comprobación automática de la firma XMSS anticuántica.
-                        </p>
                     </div>
                 </div>
             </section>
@@ -497,7 +484,7 @@
 
                     <div class="bg-obsidian-800/50 p-4 rounded-xl border border-gold-500/20">
                         <strong class="text-gold-300 text-xs font-mono block mb-1">Criptografía en Retículos (Falcon-512 y CRYSTALS-Dilithium)</strong>
-                        <p class="text-xs text-slate-300">Protege las transacciones del día a día dentro de la EVM, aprovechando la ligereza de Falcon ($\sim 666\text{ bytes}$) para garantizar ejecuciones ultrarrápidas y de bajo costo.</p>
+                        <p class="text-xs text-slate-300">Proteje las transacciones del día a día dentro de la EVM, aprovechando la ligereza de Falcon ($\sim 666 \text{ bytes}$) para garantizar ejecuciones ultrarrápidas y de bajo costo.</p>
                     </div>
                 </div>
 
