@@ -480,6 +480,27 @@
                     </div>
                 </div>
 
+                <!-- Adición sutil sobre Migración de Infraestructura (Docker & SQL) según marco NIST -->
+                <div class="bg-obsidian-800/15 p-5 rounded-xl border border-gold-500/20 space-y-3">
+                    <div class="text-gold-400 font-bold text-xs font-mono flex items-center space-x-2">
+                        <i class="fa-solid fa-server"></i>
+                        <span>Migración de Infraestructura NIST: Despliegue en Docker y Persistencia SQL</span>
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        La transición desde las <strong class="text-gold-300">claves tradicionales (RSA/ECDSA)</strong> hacia las <strong class="text-gold-300">claves poscuánticas</strong> reguladas por las normativas del NIST requiere adaptar la capa de almacenamiento y contenedores:
+                    </p>
+                    <ul class="space-y-2 text-xs font-mono text-slate-200 pl-2">
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-database text-gold-400 mt-0.5"></i>
+                            <span><strong class="text-gold-300">Persistencia SQL:</strong> A diferencia de los pares de claves tradicionales que requerían tamaños reducidos ($64 \text{ b}$ - $256 \text{ b}$) adaptables a columnas fijas, los algoritmos poscuánticos (Dilithium/Falcon/XMSS) requieren cargas de datos mayores ($\sim 1 \text{ KB} - 4 \text{ KB}$). Esto exige reestructurar las bases de datos SQL con columnas <code class="text-gold-300">VARBINARY/BLOB</code> dinámicas e índices optimizados para garantizar consultas relacionales de alto rendimiento sin comprometer la velocidad de lectura.</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-cubes text-gold-400 mt-0.5"></i>
+                            <span><strong class="text-gold-300">Aislamiento Docker:</strong> Los contenedores de validadores y microservicios deben empaquetar bibliotecas criptográficas nativas actualizadas (como <code class="text-gold-300">liboqs</code> u OpenSSL 3.x), gestionando volúmenes aislados en Docker para el seguimiento de estados en firmas XMSS y reduciendo la sobrecarga de transporte en red ante *payloads* poscuánticos de mayor envergadura.</span>
+                        </li>
+                    </ul>
+                </div>
+
                 <div class="bg-gold-500/5 border border-gold-500/30 p-5 rounded-2xl text-slate-100 text-sm leading-relaxed">
                     En la geometría armónica del cosmos, el <strong class="text-gold-400">144</strong> representa la masa crítica de resonancia. Solo requerimos <strong class="text-gold-300">144 Sembradores Iniciales</strong> comprometidos para activar oficialmente la red. Al completar este núcleo pionero, liberaremos en exclusiva el acceso al motor 3D interactivo de FRAQTUM, la plataforma académica descentralizada y los contratos inteligentes de gobernanza.
                 </div>
